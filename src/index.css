@@ -1,0 +1,14 @@
+.form-control{
+  background-color: transparent !important;
+  color: white !important;
+  
+}
+.form-control ::placeholder{
+
+  color: white !important;
+}
+
+.toggle-holder{
+  margin-top: 2% !important;
+  height: 50px;
+}

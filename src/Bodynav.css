@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&family=Graduate&display=swap');
+
+
+.Nav{
+    background-color: rgb(255, 255, 255);
+    height: 40vh;
+    transition: all 0.3s;
+	  background-size: 100% 200%; 
+	  background-image: linear-gradient(to top, rgb(200 16 46) 50%, #2b2b2b 50%); 
+	  color: #333;
+
+  }
+
+
+
+  .Nav:hover{
+    background-position: 0 100% ; 
+    color: #fff; 
+    box-shadow: 12px 12px 21px 1px rgba(0,0,0,0.56);
+    -webkit-box-shadow: 0px 12px 21px 1px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 12px 21px 1px rgba(0,0,0,0.56);
+    transform: scale(1.02);
+    
+  }
+
+  .icon{
+    height: auto;
+    max-height: 35%;
+    max-width: 35%;
+    margin-bottom: 2%;
+}
+
+a{
+    color: white !important;
+    text-decoration: none !important;
+}

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&family=Graduate&display=swap');
+
+body{
+    padding: 0 !important;
+}
+
+.NavBar img{
+    margin-left:  -40px !important;
+}
+
+.title{
+    font-family: 'Graduate', cursive;
+    font-weight: 700;
+    color: rgb(173, 0, 0);
+    font-size: 70pt !important;
+}
+
+p{
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 15pt;
+    font-weight: 600;
+    margin-left: 2%;
+    color: white;
+}
+
+h6{
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 18pt !important;
+    font-weight: 700 !important;
+    color: white;
+    
+}
+
+.welcome{
+    color: white;
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.head{
+    padding-left: 5% !important;
+}
+
+.head-row{
+    background-image: url("/public/Assets/hock.jpeg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.NavBar{
+    
+    background-color: #ffffff10 !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+
+}
+
+.icon{
+    padding: 1% !important;
+}
+
+.navlink{
+    color: white !important;
+    text-decoration: none !important;
+    width: 150px;
+}
+
+.click{
+    color: rgb(200 16 46);
+    font-weight: bold;
+}
+
+.small-model{
+  
+   height: 100vh;
+
+}
+model-viewer{
+  width: 800px;
+  height: 900px;
+    position: relative;
+    top: -10vh;
+}
+
+/* Body navigation css */
+
+
+
+
+/* @media */
+
+@media (min-width: 106px) and (max-width: 255px) {
+    model-viewer{
+        display: none;
+    }
+}
+@media (min-width: 256px) and (max-width: 768px) {
+    model-viewer{
+        width: 340px;
+        height: 300px;
+        position: relative;
+        top: -9vh;
+        left: 7px;
+    }
+}
+

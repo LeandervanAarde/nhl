@@ -1,0 +1,59 @@
+.footer-row{
+    background-color: #2b2b2b;
+}
+
+.scores{
+    height: 20vh;
+ 
+    padding-left: 7% !important;
+    padding-right: 2% !important;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+  
+}
+
+.circle{
+    margin-left: 6%;
+    background-color: red;
+    height: 100%;
+    width: 20%;
+    border-radius: 100%;
+    float: left;
+}
+
+.text{
+    margin-top: 7%;
+    float: left;
+    margin-left: 7%;
+    margin-right: 3%;
+    margin-top: 7%;
+    color: white;
+
+}
+
+@media (min-width: 356px) and (max-width: 768px) {
+  .circle{
+    margin-left: 1%;
+    background-color: red;
+    height: 70%;
+    width: 30%;
+    border-radius: 100%;
+    float: left;
+}
+
+.text{
+    margin-top: 5%;
+    float: left;
+    margin-top: 7%;
+    color: white;
+    
+
+}
+
+.scores{
+    padding-top: 7%;
+    padding-bottom: 2%;
+}
+  
+}
