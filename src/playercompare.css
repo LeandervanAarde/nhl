@@ -76,7 +76,7 @@ input-group{
 
 .piebar, .radar{
     height: auto;
-    background-color: #353535;
+    background-color: #272626;
     padding: 1%;
     border-radius: 8px;
     box-shadow: 0px 5px 14px 5px rgba(0,0,0,0.30);
@@ -90,7 +90,7 @@ input-group{
 @media (min-width: 256px) and (max-width: 768px) {
     .piebar, .radar{
         height: 40vh;
-        background-color: #353535;
+        background-color: #272626;
         padding: 1%;
         border-radius: 8px;
         box-shadow: 0px 5px 14px 5px rgba(0,0,0,0.30);

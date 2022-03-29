@@ -1,16 +1,3 @@
-const getPlayerId = (name) => {
-  const p = players.filter(player =>
-    player.name.toUpperCase().includes(name.toUpperCase())
-  );
-  if (p.length > 1) {
-    // if the query matches more than 1 player, return the array of players
-    return p;
-  } else {
-    // player found, return the id
-    return p[0].id;
-  }
-};
-export default getPlayerId;
 
 const players= [
   

@@ -31,7 +31,7 @@ const Head = () => {
             <Nav className="me-auto">
                 <Nav.Link className='navlink'><Link to="/"><p>Player Compare</p></Link></Nav.Link>
                 <Nav.Link className='navlink'><Link to="/Teamcompare"><p>Team Compare</p></Link></Nav.Link>
-                <Nav.Link className='navlink'><Link to="/ComThree"><p>Player Timeline</p></Link></Nav.Link>
+                <Nav.Link className='navlink'><Link to="/Playertimeline"><p>Player Timeline</p></Link></Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>

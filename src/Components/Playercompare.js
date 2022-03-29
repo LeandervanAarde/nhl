@@ -10,23 +10,33 @@ import { Bar } from 'react-chartjs-2';
 import { Radar } from 'react-chartjs-2';
 import getPlayerId from "../players.js";
 import { useState, useEffect, useRef } from "react";
+import players from "../players"
 
 const Playercompare = () => {
+    let id = players.id;
+    let name = players.name;
+    const playerOneInput = useRef(null);
+    const playerTwoInput = useRef(null);
+    const[playerOneName, setPlayerOneName] = useState("Choose player name");
+    const[playerTwoName, setPlayerTwoName] = useState("Choose player name");
 
-    
-    axios.get('https://statsapi.web.nhl.com/api/v1/people/8477474')
-    .then((response) => {
-        console.log(response.data.people[0].fullName);
+    function getPlayer(){
+        
+    };
 
-    }).catch((error) => {
+    // axios.get('https://statsapi.web.nhl.com/api/v1/people/'+id)
+    //     .then((response) => {
+    //         console.log(response.data.people[0].fullName);
 
-        console.log(error);
-    });
+    //     }).catch((error) => {
+
+    //         console.log(error);
+    //     });
 
 
     //Bar data
 
-    const barData ={
+    const barData = {
 
 
         labels: ['Shots', 'Goals', 'Penalties', 'TOI', 'hits'],
@@ -36,9 +46,9 @@ const Playercompare = () => {
                 label: "Player one",
                 data: [152, 50, 12, 76, 45.8],
                 backgroundColor: [" rgb(200 ,16, 46)"],
-        
 
-                
+
+
             },
             {
                 label: "Player two",
@@ -46,52 +56,52 @@ const Playercompare = () => {
                 backgroundColor: ["rgb(30, 30, 148)"],
 
 
-            }, 
+            },
 
         ],
-       
-        
+
+
 
     };
 
 
     //Radar data 
 
-    const radarData ={
+    const radarData = {
         labels: ['Shots', 'Goals', 'Penalties', 'TOI', 'Five'],
-                        datasets: [
-                            {
+        datasets: [
+            {
 
-                                label: "Player one",
-                                data: [12, 43, 12, 8, 2],
-                                backgroundColor: [" rgb(200 ,16, 46)"],
-
-
-                            },
-                            {
-                                label: "Player two",
-                                data: [12, 43, 12, 8, 2],
-                                backgroundColor: ["rgb(30, 30, 148)"],
-
-                            }
+                label: "Player one",
+                data: [12, 43, 12, 8, 2],
+                backgroundColor: [" rgb(200 ,16, 46)"],
 
 
+            },
+            {
+                label: "Player two",
+                data: [12, 43, 12, 8, 2],
+                backgroundColor: ["rgb(30, 30, 148)"],
 
-                        ],
-                        borderwidth: 1
-    }; 
+            }
+
+
+
+        ],
+        borderwidth: 1
+    };
 
 
 
     return (
 
-        
+
 
         <Row className='player-compare-row'>
             <Col className='col-12 col-lg-4 input-container' id='input'>
-                <InputGroup className="mb-3 mt-4 input" >
+                <InputGroup className="mb-3 mt-4 input" ref={playerOneInput} >
                     <FormControl
-                        placeholder="Player Name"
+                        placeholder={playerOneName}
                         aria-label="Player Name"
                         aria-describedby="basic-addon1"
                     />
@@ -100,9 +110,9 @@ const Playercompare = () => {
             </Col>
 
             <Col className='col-12 col-lg-4 offset-lg-4  input-container'>
-                <InputGroup className="mb-3 mt-4 input">
+                <InputGroup className="mb-3 mt-4 input"  ref={playerTwoInput}>
                     <FormControl
-                        placeholder="Player Name"
+                        placeholder= {playerTwoName}
                         aria-label="Player Name"
                         aria-describedby="basic-addon1"
                     />
@@ -131,81 +141,80 @@ const Playercompare = () => {
             <Col className=' col-12 col-lg-7 chart-container p-2 mt-5 mb-2'>
                 <div className='piebar col-12  '>
                     <Bar data={barData}
-                         options={{
-                             responsive: true,
-                            plugins:{
-                                decimation:{
-                                    enabled: true, 
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                decimation: {
+                                    enabled: true,
                                 },
-                                title:{
+                                title: {
                                     display: true,
                                     text: "Player stats",
                                     position: "bottom",
                                     color: "white",
-                                    font:{
-                                        size: 24, 
+                                    font: {
+                                        size: 24,
                                         weight: "bold",
-                                          
+
                                     }
                                 },
-                                legend:{
-                                    position: "bottom", 
-                                   labels:{
-                                   display: true,
-                                    padding: 30, 
-                                    boxWidth: 30,
-                                    boxHeight: 20, 
-                                   
-                                   }
+                                legend: {
+                                    position: "bottom",
+                                    labels: {
+                                        display: true,
+                                        padding: 30,
+                                        boxWidth: 30,
+                                        boxHeight: 20,
+
+                                    }
                                 }
-                            }, 
+                            },
                             indexAxis: 'y',
                             responsive: true,
-                            animation:{
+                            animation: {
                                 easing: 'easeInOutBounce',
                                 duration: 1800,
-                                numSteps: 2, 
+                                numSteps: 2,
                             },
-    
-                            datasets:{
-                               bar:{
-                                   base: 0,
-                                   borderWidth: 3,
-                                   hoverBorderColor: "white", 
-                                   hoverBorderWidth: 3,
-                                   borderRadius: 10, 
-    
-                               }
+
+                            datasets: {
+                                bar: {
+                                    base: 0,
+                                    borderWidth: 3,
+                                    hoverBorderColor: "white",
+                                    hoverBorderWidth: 3,
+                                    borderRadius: 10,
+
+                                }
                             }
-                          }}
-                    
-                    
+                        }}
+
+
                     />
                 </div>
             </Col>
 
             <Col className=' col-12 col-lg-5 chart-container p-2 mt-5 mb-2'>
                 <div className='radar col-12  '>
-                    <Radar data = {radarData}
+                    <Radar data={radarData}
 
-height={100}
+                        height={100}
 
-options={{
-    responsive: true,
-   plugins:{
-       decimation:{
-           enabled: true, 
-       },
-       legend:{
-           display: false,
-         
-       }
-   }, 
- 
+                        options={{
+                            responsive: true,
+                            plugins: {
+                                decimation: {
+                                    enabled: true,
+                                },
+                                legend: {
+                                    display: false,
 
- }}
+                                }
+                            },
 
-                  
+
+                        }}
                     />
                 </div>
             </Col>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { useState, useEffect, useRef } from "react";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import '../Teamcompare.css';
@@ -6,18 +7,51 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import axios from 'axios';
 import { PolarArea } from "react-chartjs-2";
-
+//render function
 const Teamcompare = () => {
 
-    axios.get('https://statsapi.web.nhl.com/api/v1/teams')
-        .then((response) => {
-            console.log(response.data.teams[0].name);
-            console.log(response.data.teams[4].name);
+    // let Id = 2; 
+    // axios.get('https://statsapi.web.nhl.com/api/v1/teams/'+Id+'/?expand=team.stats')
+    // .then((res) =>{
+    //     console.log(res);
+    // },[])
+    //set the list so it can be accessed outside
+    const [teamList, setTeamList] = useState([]);
+    //get the value of the input
+    const linkValue = useRef();
+//use effect ensures that it will only run once
+    useEffect(() => {
+//axios call
+        axios.get('https://statsapi.web.nhl.com/api/v1/teams')
+            .then((response) => {
+                //variable so that it will get the data
+                let teams = response.data.teams;
+                // console.log(teams);
+                // empty array to store the teams in
+                let allTeams = [];
+                // loop through data and push certain info to that array
+                for (let i = 0; i < teams.length; i++) {
 
-        }).catch((error) => {
+                    allTeams.push({
+                        id: teams[i].id,
+                        name: teams[i].teamName,
+                        link: teams[i].link,
+                    });
+                }
+                // console.log(allTeams);
+                // set the all teams to an array that can now be called outside
 
-            console.log(error);
-        });
+                setTeamList(allTeams);
+
+            })
+           
+
+    }, [])
+    
+    console.log(teamList);
+
+
+
 
     const polarData = {
         labels: ["Team1 Wins", "Team2 Wins", "Team2 Losses", "Team2 OT Losses", "Team1 OT Losses", "Team2 OT Losses", "Team1 Stanely Cups", "Team2 Stanely Cups"],
@@ -42,12 +76,27 @@ const Teamcompare = () => {
 
     };
 
+
+    // function getTeam(){
+    //     let value = linkValue.value;
+    //     for(let i= 0; teamList.length; i++){
+
+    //         if(value === teamList[i].name){
+    //             console.log(teamList)
+
+    //         }
+    //     }
+
+    // }
+
+    // onChange={getTeam}
+
     return (
         <Row className='team-compare-row'>
 
             <Col className='col-12 col-lg-4 input-container' id='input'>
 
-                <InputGroup className="mb-3 mt-4   input">
+                <InputGroup className="mb-3 mt-4 input" ref={linkValue}>
                     <FormControl
                         placeholder="Team Name"
                         aria-label="Team Name"
