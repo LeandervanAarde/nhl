@@ -8,35 +8,98 @@ import axios from 'axios';
 import 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import { Radar } from 'react-chartjs-2';
-import getPlayerId from "../players.js";
 import { useState, useEffect, useRef } from "react";
-import players from "../players"
+import players from '../Players.js';
 
 const Playercompare = () => {
-    let id = players.id;
-    let name = players.name;
-    const playerOneInput = useRef(null);
-    const playerTwoInput = useRef(null);
-    const[playerOneName, setPlayerOneName] = useState("Choose player name");
-    const[playerTwoName, setPlayerTwoName] = useState("Choose player name");
 
-    function getPlayer(){
-        
+    // let axiosurl= 'https://statsapi.web.nhl.com/api/v1/people/' +id; 
+    const [playerOneName, setPlayerOneName] = useState("Choose player name");
+    const [playerTwoName, setPlayerTwoName] = useState("Choose player name");
+    const [playerName, setPlayerName] = useState();
+    const [playerOnenr, setPlayerOnenr] = useState();
+    const [playerNameTwo, setPlayerNameTwo] = useState();
+    const [playerTwonr, setPlayerTwonr] = useState();
+    const [playerOneStatistics, setPlayerOneStatistics] = useState();
+
+
+    const updatePlayerName = (event) => {
+
+        setPlayerName(event.target.value);
     };
 
-    // axios.get('https://statsapi.web.nhl.com/api/v1/people/'+id)
-    //     .then((response) => {
-    //         console.log(response.data.people[0].fullName);
+    const updateplayerTwo = (event) => {
 
-    //     }).catch((error) => {
+        setPlayerNameTwo(event.target.value);
+    };
 
-    //         console.log(error);
-    //     });
+    function playerOneId() {
+
+        for (let i = 0; i < players.length; i++) {
+            if (playerName === players[i].name) {
+                console.log(players[i]);
+                let idOne = players[i].id;
+
+                setPlayerOnenr(idOne);
 
 
-    //Bar data
+            }
+
+        }
+
+    }
+    console.log(playerOnenr);
+
+    useEffect(() => {
+
+   
+        axios.get('https://statsapi.web.nhl.com/api/v1/people/' + playerOnenr + '/stats?stats=yearByYear')
+            .then((response) => {
+                let data = response.data.stats[0].splits;
+                // console.log(data);
+                const playerOnestats = [];
+
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].league.name === 'National Hockey League') {
+                        playerOnestats.push({
+                            season: data[i].season,
+                            assists: data[i].stat.assists,
+                            goals: data[i].stat.goals,
+                            powerPlayPoints: data[i].stat.powerPlayPoints,
+                            blocked: data[i].stat.blocked,
+                            gwg: data[i].stat.gameWinningGoals,
+                            hits: data[i].stat.hits,
+                            penaltyMinutes: data[i].stat.pim,
+                            plusminus: data[i].stat.plusMinus,
+                            points: data[i].stat.points,
+                            shotPct: data[i].stat.shotPct,
+                            shots: data[i].stat.shots,
+                        });
+                    }
+                }
+                setPlayerOneStatistics(playerOnestats);
+               
+            })
+            
+    }, [])
+
+    console.log(playerOneStatistics);
+
+    function playerTwoId() {
+
+        for (let i = 0; i < players.length; i++) {
+            if (playerNameTwo === players[i].name) {
+                console.log(players[i]);
+                let idTwo = players[i].id;
+                setPlayerTwonr(players[i].id);
+
+            }
+        }
+    }
+    console.log(playerTwonr);
 
     const barData = {
+
 
 
         labels: ['Shots', 'Goals', 'Penalties', 'TOI', 'hits'],
@@ -46,25 +109,16 @@ const Playercompare = () => {
                 label: "Player one",
                 data: [152, 50, 12, 76, 45.8],
                 backgroundColor: [" rgb(200 ,16, 46)"],
-
-
-
             },
             {
                 label: "Player two",
                 data: [122, 48, 8, 76, 10],
                 backgroundColor: ["rgb(30, 30, 148)"],
-
-
             },
 
         ],
 
-
-
     };
-
-
     //Radar data 
 
     const radarData = {
@@ -75,56 +129,43 @@ const Playercompare = () => {
                 label: "Player one",
                 data: [12, 43, 12, 8, 2],
                 backgroundColor: [" rgb(200 ,16, 46)"],
-
-
             },
             {
                 label: "Player two",
                 data: [12, 43, 12, 8, 2],
                 backgroundColor: ["rgb(30, 30, 148)"],
-
             }
-
-
-
         ],
         borderwidth: 1
     };
-
-
-
     return (
-
-
-
         <Row className='player-compare-row'>
             <Col className='col-12 col-lg-4 input-container' id='input'>
-                <InputGroup className="mb-3 mt-4 input" ref={playerOneInput} >
+                <InputGroup className="mb-3 mt-4 input" >
                     <FormControl
                         placeholder={playerOneName}
                         aria-label="Player Name"
                         aria-describedby="basic-addon1"
+                        onChange={updatePlayerName}
                     />
                 </InputGroup>
-
+                <div className='button col-3' onClick={playerOneId} ><p>Find Player</p></div>
             </Col>
 
             <Col className='col-12 col-lg-4 offset-lg-4  input-container'>
-                <InputGroup className="mb-3 mt-4 input"  ref={playerTwoInput}>
+                <InputGroup className="mb-3 mt-4 input">
                     <FormControl
-                        placeholder= {playerTwoName}
+                        placeholder={playerTwoName}
                         aria-label="Player Name"
                         aria-describedby="basic-addon1"
+                        onChange={updateplayerTwo}
                     />
                 </InputGroup>
-
+                <div className='button col-3' onClick={playerTwoId} ><p>Find Player</p></div>
             </Col>
-
-
 
             <Col className=' col-6 col-lg-5 card-1 '>
                 {/* {Showplayer1}  */}
-
             </Col>
 
             <Col className=' col-6 col-lg-5 card-2 '>
@@ -166,7 +207,6 @@ const Playercompare = () => {
                                         padding: 30,
                                         boxWidth: 30,
                                         boxHeight: 20,
-
                                     }
                                 }
                             },
@@ -177,7 +217,6 @@ const Playercompare = () => {
                                 duration: 1800,
                                 numSteps: 2,
                             },
-
                             datasets: {
                                 bar: {
                                     base: 0,
@@ -190,7 +229,6 @@ const Playercompare = () => {
                             }
                         }}
 
-
                     />
                 </div>
             </Col>
@@ -198,9 +236,7 @@ const Playercompare = () => {
             <Col className=' col-12 col-lg-5 chart-container p-2 mt-5 mb-2'>
                 <div className='radar col-12  '>
                     <Radar data={radarData}
-
                         height={100}
-
                         options={{
                             responsive: true,
                             plugins: {
@@ -212,14 +248,10 @@ const Playercompare = () => {
 
                                 }
                             },
-
-
                         }}
                     />
                 </div>
             </Col>
-
-
         </Row>
     );
 };
