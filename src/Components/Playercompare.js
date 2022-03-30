@@ -21,6 +21,7 @@ const Playercompare = () => {
     const [playerNameTwo, setPlayerNameTwo] = useState();
     const [playerTwonr, setPlayerTwonr] = useState();
     const [playerOneStatistics, setPlayerOneStatistics] = useState();
+    const [apiLink, setApiLink] = useState();
 
 
     const updatePlayerName = (event) => {
@@ -37,23 +38,24 @@ const Playercompare = () => {
 
         for (let i = 0; i < players.length; i++) {
             if (playerName === players[i].name) {
-                console.log(players[i]);
+                // console.log(players[i]);
                 let idOne = players[i].id;
 
                 setPlayerOnenr(idOne);
-
+                setApiLink('https://statsapi.web.nhl.com/api/v1/people/' + idOne + '/stats?stats=yearByYear'); 
 
             }
 
         }
-
+       
     }
-    console.log(playerOnenr);
+    
+    // console.log(playerOnenr);
+
 
     useEffect(() => {
-
-   
-        axios.get('https://statsapi.web.nhl.com/api/v1/people/' + playerOnenr + '/stats?stats=yearByYear')
+    
+        axios.get(apiLink)
             .then((response) => {
                 let data = response.data.stats[0].splits;
                 // console.log(data);
@@ -77,13 +79,44 @@ const Playercompare = () => {
                         });
                     }
                 }
-                setPlayerOneStatistics(playerOnestats);
-               
-            })
-            
-    }, [])
+                const goalArr = [];
+                const shotArr = [];
+                const assArr =[];
+                const penArr =[];
+                const HitArr =[];
+              
+                // for(let j = 0; j < playerOnestats.length; j++){
+                //     const goals = playerOnestats[j].goals;
+                //     goalArr.push(goals);
+                //     console.log(goalArr);
 
-    console.log(playerOneStatistics);
+                //     const assist = playerOnestats[j].goals;
+                //     shitArr.push(goals);
+                //     console.log(goalArr);
+
+                //     const goals = playerOnestats[j].goals;
+                //     goalArr.push(goals);
+                //     console.log(goalArr);
+
+                //     const goals = playerOnestats[j].goals;
+                //     goalArr.push(goals);
+                //     console.log(goalArr);
+
+                //     const goals = playerOnestats[j].goals;
+                //     goalArr.push(goals);
+                //     console.log(goalArr);
+
+                // }
+               
+
+                // setPlayerOneStatistics(playerOnestats);
+          
+            })
+           
+    }, [apiLink])
+
+
+
 
     function playerTwoId() {
 
@@ -106,12 +139,12 @@ const Playercompare = () => {
         datasets: [
             {
 
-                label: "Player one",
+                label: "hey",
                 data: [152, 50, 12, 76, 45.8],
                 backgroundColor: [" rgb(200 ,16, 46)"],
             },
             {
-                label: "Player two",
+                label: "hey",
                 data: [122, 48, 8, 76, 10],
                 backgroundColor: ["rgb(30, 30, 148)"],
             },
