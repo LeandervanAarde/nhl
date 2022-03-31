@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Scores = () => {
     useEffect(()=>{
-
+        axios.get('')
 
         
     })
