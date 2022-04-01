@@ -32,6 +32,11 @@
 
 }
 
+#right{
+    margin-right: 0 !important;
+}
+
+
 @media (min-width: 356px) and (max-width: 768px) {
   .circle{
     margin-left: 1%;

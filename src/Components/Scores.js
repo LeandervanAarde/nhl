@@ -7,8 +7,11 @@ import Scoreitem from './Scoreitem';
 
 const Scores = () => {
     const [gameOne, setGameOne] =useState();
-    const[finalScore, setFinalScore] = useState();
-
+    const[homeScore, setHomeScore] = useState([]);
+    const[awayScore, setAwayScore]= useState([]);
+    const [gameTwo, setGameTwo] =useState();
+    const[homeScoreTwo, setHomeTwoScore] = useState([]);
+    const[awayScoreTwo, setAwayTwoScore]= useState([]);
     useEffect(()=>{
 
         //API link
@@ -18,6 +21,7 @@ const Scores = () => {
             let data = result.data.dates[0].games;
             // console.log(data);
             const game1Arr = [];
+            const game2Arr = [];
             // console.log(data);
             for(let i = 0; i < data.length; i++){
                game1Arr.push({
@@ -28,20 +32,42 @@ const Scores = () => {
                     idAway: data[i].teams.away.team.id,
                     teamNameAway: data[i].teams.away.team.name,
                     scoreAway: data[i].teams.away.score,
-                })
+                });
+
+                game2Arr.push({
+                    //push home and away teams to the game1 array in order to get both scores
+                     id: data[i].teams.home.team.id,
+                     teamName: data[i].teams.home.team.name,
+                     score: data[i].teams.home.score,
+                     idAway: data[i].teams.away.team.id,
+                     teamNameAway: data[i].teams.away.team.name,
+                     scoreAway: data[i].teams.away.score,
+                 })
             }
             //set game one to a UseStae
             setGameOne(game1Arr);
+            setGameTwo(game2Arr)
             //Map the data
              const scoreOne = game1Arr.map((item) => <Scoreitem key={item.id} teamName ={item.teamName} score={item.score}></Scoreitem>);
              const scoreTwo = game1Arr.map((item) => <Scoreitem key={item.idAway} teamName ={item.teamNameAway} score={item.scoreAway}></Scoreitem>);
+
+             const scoreThree = game2Arr.map((item) => <Scoreitem key={item.id} teamName ={item.teamName} score={item.score}></Scoreitem>);
+             const scoreFour = game2Arr.map((item) => <Scoreitem key={item.idAway} teamName ={item.teamNameAway} score={item.scoreAway}></Scoreitem>);
+
              //set the final score
-             setFinalScore(scoreOne,scoreTwo)
+             setHomeScore(scoreOne);
+             setAwayScore(scoreTwo);
+
+             setHomeTwoScore(scoreThree);
+             setAwayTwoScore(scoreFour);
+
+             console.log(game1Arr);
+
         })
+
         
     }, [])
-    console.log(finalScore);
-    // console.log(score1); 
+ 
  
 
     return (
@@ -51,7 +77,9 @@ const Scores = () => {
 
                 </div>
             {/* Call the final score after the score Item has been added */}
-              {finalScore}
+              {homeScore [1]}
+              
+              {awayScore [1]}
                 
                 <div className='circle '>
 
@@ -67,9 +95,8 @@ const Scores = () => {
 
                 </div>
 
-                <div className='text'><h3>0 </h3></div>
-                <div className='text'><h3>0 </h3></div>
-
+                {homeScoreTwo [2]}
+                {awayScoreTwo [2]}
                 <div className='circle '>
 
                 </div>
