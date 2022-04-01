@@ -3,44 +3,46 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../Scores.css';
 import axios from 'axios';
-import scoreItem from './scoreItem';
+import Scoreitem from './Scoreitem';
 
 const Scores = () => {
-    const [homeTeam1, setHomeTeam1] = useState();
-    const [awayTeam1, setAwayTeam1] = useState();
+    const [gameOne, setGameOne] =useState();
+    const[finalScore, setFinalScore] = useState();
 
     useEffect(()=>{
+
+        //API link
         axios.get('https://statsapi.web.nhl.com/api/v1/schedule')
         .then((result)=>{
+            //data
             let data = result.data.dates[0].games;
             // console.log(data);
-            const team1Arr = [];
-            const team2Arr = [];
-
+            const game1Arr = [];
             // console.log(data);
             for(let i = 0; i < data.length; i++){
-                team1Arr.push({
+               game1Arr.push({
+                   //push home and away teams to the game1 array in order to get both scores
                     id: data[i].teams.home.team.id,
                     teamName: data[i].teams.home.team.name,
                     score: data[i].teams.home.score,
-                })
-
-                team2Arr.push({
-                    id: data[i].teams.away.team.id,
-                    teamName: data[i].teams.away.team.name,
-                    score: data[i].teams.away.score,
+                    idAway: data[i].teams.away.team.id,
+                    teamNameAway: data[i].teams.away.team.name,
+                    scoreAway: data[i].teams.away.score,
                 })
             }
-
-            console.log(team1Arr);
-            console.log(team2Arr);
-            setHomeTeam1(team1Arr);
-            setAwayTeam1(team2Arr);
-
+            //set game one to a UseStae
+            setGameOne(game1Arr);
+            //Map the data
+             const scoreOne = game1Arr.map((item) => <Scoreitem key={item.id} teamName ={item.teamName} score={item.score}></Scoreitem>);
+             const scoreTwo = game1Arr.map((item) => <Scoreitem key={item.idAway} teamName ={item.teamNameAway} score={item.scoreAway}></Scoreitem>);
+             //set the final score
+             setFinalScore(scoreOne,scoreTwo)
         })
-            // const teams1 = homeTeam1.map((items) => <scoreItem key={items.id} teamName ={items.teamName} score={items.score}></scoreItem>);
-            // const teams2 = awayTeam1.map((items2) => <scoreItem key2={items2.id} teamName2={items2.teamName} score2={items2.score}></scoreItem>);
+        
     }, [])
+    console.log(finalScore);
+    // console.log(score1); 
+ 
 
     return (
         <Row className='footer-row'>
@@ -48,9 +50,9 @@ const Scores = () => {
                 <div className='circle '>
 
                 </div>
-
-                <div className='text'><h3>0 </h3></div>
-                <div className='text'><h3>0 </h3></div>
+            {/* Call the final score after the score Item has been added */}
+              {finalScore}
+                
                 <div className='circle '>
 
                 </div>
