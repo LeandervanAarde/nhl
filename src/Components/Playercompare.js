@@ -48,6 +48,24 @@ const Playercompare = () => {
 
     );
 
+    const [radarData, setRadarData] = useState(
+         {
+            labels: ['Shots', 'Goals', 'Penalties', 'TOI', 'Five'],
+            datasets: [
+                {
+                    label: "Player one",
+                    data: [0,0,0,0,0],
+                    backgroundColor: [" rgb(200 ,16, 46)"],
+                },
+                {
+                    label: "Player two",
+                    data: [0,0,0,0,0],
+                    backgroundColor: ["rgb(30, 30, 148)"],
+                }
+            ],
+            borderwidth: 1
+        }
+    );
 
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
@@ -107,9 +125,6 @@ const Playercompare = () => {
         }
     }
 
-    // console.log(apiLink);
-
-
     useEffect((index) => {
 
         axios.get(apiLink)
@@ -135,7 +150,6 @@ const Playercompare = () => {
                             shots: data[i].stat.shots,
                         });
                     }
-
                 }
 
                 let goalArr = [];
@@ -180,11 +194,6 @@ const Playercompare = () => {
 
     }, [apiLink])
 
-    // console.log(playerOneStatistics);
-
-
-
-
     const updatePlayerTwo = (event) => {
         let a, b, val = event.currentTarget.value; 
         closeAllLists2();
@@ -208,14 +217,10 @@ const Playercompare = () => {
                        setPlayerNameTwo(inputVal2.current.value);
 
                         closeAllLists2();
-                    });
-                
+                    });  
             }
         }
     };
-
-    
-    
 
     function playerTwoId() {
 
@@ -223,18 +228,12 @@ const Playercompare = () => {
             if (playerNameTwo === players[i].name) {
                 let idTwo = players[i].id;
                 setPlayerTwonr(players[i].id);
-                setApiLinkTwo('https://statsapi.web.nhl.com/api/v1/people/' + idTwo + '/stats?stats=yearByYear', 1); 
-              
+                setApiLinkTwo('https://statsapi.web.nhl.com/api/v1/people/' + idTwo + '/stats?stats=yearByYear', 1);     
             }
         }
-    
     }
-    // console.log(apiLinkTwo);
 
-    //sdc
-
-    useEffect((index) => {
-       
+    useEffect((index) => { 
         axios.get(apiLinkTwo)
             .then((response) => {
                 let data = response.data.stats[0].splits;
@@ -260,7 +259,6 @@ const Playercompare = () => {
                     }
 
                 }
-
                 let goalArr = [];
                 let shotArr = [];
                 let assArr = [];
@@ -284,7 +282,6 @@ const Playercompare = () => {
                     const hits =  playerTwostats[j].hits;
                     HitArr.push(hits);
                 }
-
                 const goalSuM = goalArr.reduce((x, y) => x + y);
                 const assSum = assArr.reduce((x, y) => x + y);
                 const shotSum = shotArr.reduce((x, y) => x + y);
@@ -298,29 +295,19 @@ const Playercompare = () => {
                     penaltyMin: penSum,
                     hits: hitSum,
                 },  index);
-
             })
 
-           
     }, [apiLinkTwo])
 
-
+    // const playerTwoGraph = playerTwoStatistics.map((item) => <></>)
     // sdc
 
     console.log(playerOneStatistics);
 
-
-
-//ASK LEO
-//
-///
-//
-
-///
     function createGraph(data, index) {
 
-        let tmpBar = playerTwoStatistics;
-        let tmpBar2 = playerOneStatistics;
+        let tmpBar = playerOneStatistics;
+        let tmpBar2 = playerTwoStatistics;
         let datasetZero = (Object.values(tmpBar));
         let datasetOne = (Object.values(tmpBar2));
         console.log(datasetOne)
@@ -331,45 +318,50 @@ const Playercompare = () => {
             datasets: [
                 {
 
-                    label: "hey",
+                    label: playerName,
                     data: datasetZero,
                     backgroundColor: [" rgb(200 ,16, 46)"],
                 },
                 {
-                    label: "hey",
+                    label: playerNameTwo,
                     data: datasetOne,
                     backgroundColor: ["rgb(30, 30, 148)"],
                 },
 
             ],
-
-
-
-
         };
 
         setDummyDataBar(dataBar);
     }
 
-    
+    function createRadarGraph(data, index) {
 
-    //Radar data 
-    const radarData = {
-        labels: ['Shots', 'Goals', 'Penalties', 'TOI', 'Five'],
-        datasets: [
-            {
-                label: "Player one",
-                data: [12, 43, 12, 8, 2],
-                backgroundColor: [" rgb(200 ,16, 46)"],
-            },
-            {
-                label: "Player two",
-                data: [12, 43, 12, 8, 2],
-                backgroundColor: ["rgb(30, 30, 148)"],
-            }
-        ],
-        borderwidth: 1
-    };
+        let tmpBar = playerOneStatistics;
+        let tmpBar2 = playerTwoStatistics;
+        let datasetZero = (Object.values(tmpBar));
+        let datasetOne = (Object.values(tmpBar2));
+        console.log(datasetOne);
+
+        const radarData = {
+
+            labels: ['Goals', 'Assists', 'Shots', 'penaltyMin', 'Hits'],
+            datasets: [
+                {
+
+                    label: playerName,
+                    data: datasetZero,
+                    backgroundColor: [" rgb(200 ,16, 46)"],
+                },
+                {
+                    label: playerNameTwo,
+                    data: datasetOne,
+                    backgroundColor: ["rgb(30, 30, 148)"],
+                },
+
+            ],
+        };
+        setRadarData(radarData);
+    }
 
     return (
         <Row className='player-compare-row'>
@@ -382,7 +374,12 @@ const Playercompare = () => {
                         onChange={updatePlayerName}
                     />
                 </InputGroup>
-                <div className='button col-3' onClick={playerOneId} ><p>Find Player</p></div>
+                <div className='button col-3' onClick={() =>{
+                    playerOneId();
+                    createGraph();
+                    createRadarGraph();
+                 
+                }} ><p>Find Player</p></div>
             </Col>
 
             <Col className='col-12 col-lg-4 offset-lg-4  input-container' id='input-2'>
@@ -394,7 +391,14 @@ const Playercompare = () => {
                         onChange={updatePlayerTwo}
                     />
                 </InputGroup>
-                <div className='button col-3' onClick={playerTwoId} ><p>Find Player</p></div>
+                <div className='button col-3' onClick={()=>{
+                    playerTwoId();
+                    createGraph();
+                    createRadarGraph();
+                    }} ><p>Find Player</p></div>
+            </Col>
+            <Col>
+            
             </Col>
 
             <Col className=' col-6 col-lg-5 card-1 '>
@@ -476,7 +480,7 @@ const Playercompare = () => {
                                     enabled: true,
                                 },
                                 legend: {
-                                    display: false,
+                                    display: true,
 
                                 }
                             },

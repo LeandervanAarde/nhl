@@ -8,6 +8,7 @@ import Playertimeline from './Components/Playertimeline';
 import Scores from './Components/Scores';
 
 function App() {
+  
   return (
    <>
    <div className='App'>

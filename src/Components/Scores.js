@@ -15,10 +15,12 @@ const Scores = () => {
     useEffect(()=>{
 
         //API link
-        axios.get('https://statsapi.web.nhl.com/api/v1/schedule')
+        axios.get('https://statsapi.web.nhl.com/api/v1/schedule', 'https://parsehub.com/api/v2/projects/tuVt2t2ZWQQ8/last_ready_run/data?api_key=toETzo8u5X5b')
         .then((result)=>{
             //data
             let data = result.data.dates[0].games;
+            let data2 = result;
+            // console.log(result)
             // console.log(data);
             const game1Arr = [];
             const game2Arr = [];
@@ -46,7 +48,7 @@ const Scores = () => {
             }
             //set game one to a UseStae
             setGameOne(game1Arr);
-            setGameTwo(game2Arr)
+            setGameTwo(game2Arr);
             //Map the data
              const scoreOne = game1Arr.map((item) => <Scoreitem key={item.id} teamName ={item.teamName} score={item.score}></Scoreitem>);
              const scoreTwo = game1Arr.map((item) => <Scoreitem key={item.idAway} teamName ={item.teamNameAway} score={item.scoreAway}></Scoreitem>);
@@ -61,7 +63,7 @@ const Scores = () => {
              setHomeTwoScore(scoreThree);
              setAwayTwoScore(scoreFour);
 
-             console.log(game1Arr);
+            //  console.log(game1Arr);
 
         })
 
