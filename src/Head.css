@@ -6,6 +6,7 @@ body{
 
 .NavBar img{
     margin-left:  -40px !important;
+
 }
 
 .title{
@@ -77,7 +78,7 @@ h6{
 
 }
 model-viewer{
-  width: 800px;
+  width: 700px;
   height: 900px;
     position: relative;
     top: -10vh;
@@ -100,8 +101,12 @@ model-viewer{
         width: 340px;
         height: 300px;
         position: relative;
-        top: -9vh;
+        top: -17vh;
         left: 7px;
+    }
+
+    .NavBar img{
+        height: 60px;
     }
 }
 

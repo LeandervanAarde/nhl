@@ -47,7 +47,7 @@ const Head = () => {
             </p>
                 <br></br>
                 <br></br>
-            <h6 className=' click text-center'>Click here to start comparing </h6> 
+           
         </Col>
 
         <Col className='model-viewer col-12 col-lg-4'>
@@ -55,7 +55,7 @@ const Head = () => {
 
                     <p className='text-center  mt-1 mt-lg-4 d-block d-lg-none '> Chel is a comparitive data web Application that gives allows you to compare you favorite players of all time. Here you can look at all player stats from the start of their NHL career and track their averages, compare them or view how they have improved. </p>
                     
-                    <h6 className='d-block d-lg-none text-center click'> Click here to start comparing </h6>
+                    
                 
                 <model-viewer className ="small-model" alt="Puck model" camera-orbit="120deg 70deg 210%" auto-rotate rotation-per-second="30deg" src="../3D/LEANDERRR.gltf" seamless-poster shadow-intensity="1"></model-viewer>
         </Col>

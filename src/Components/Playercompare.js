@@ -67,6 +67,7 @@ const Playercompare = () => {
         }
     );
 
+//close left search box when element is clicked on
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
@@ -75,16 +76,20 @@ const Playercompare = () => {
             }
         }
     }
-
+    //get the player name from player.js
     const updatePlayerName = (event) => {
+        //get the typed value
         let a, b, val = event.currentTarget.value;
+        //calling close list function
         closeAllLists();
         a = document.createElement("DIV");
         a.setAttribute("id", "input1" + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         document.getElementById("input").appendChild(a);
         for (let i = 0; i < players.length; i++) {
+            //convert to uppercase, find if what is being typed is included in JsON
             if (players[i].name.toUpperCase().includes(val.toUpperCase())) {
+                // Create the div
                 b = document.createElement("DIV");
                 b.setAttribute("data-id", i);
                 let pos1 = players[i].name.toUpperCase().indexOf(val.toUpperCase());
@@ -92,6 +97,7 @@ const Playercompare = () => {
                 b.innerHTML += "<strong>" + players[i].name.substr(pos1, val.length) + "</strong>";
                 b.innerHTML += players[i].name.substr(pos1 + val.length);
                 a.appendChild(b);
+                //onclick the value in input will equal whatever you clicked.
                 b.addEventListener("click", function (e) {
                     inputVal.current.value = e.target.innerText;
                     setPlayerName(inputVal.current.value);
@@ -222,6 +228,7 @@ const Playercompare = () => {
         }
     };
 
+
     function playerTwoId() {
 
         for (let i = 0; i < players.length; i++) {
@@ -350,12 +357,12 @@ const Playercompare = () => {
 
                     label: playerName,
                     data: datasetZero,
-                    backgroundColor: [" rgb(200 ,16, 46)"],
+                    backgroundColor: [" rgba(200 ,16, 46, 0.60)"],
                 },
                 {
                     label: playerNameTwo,
                     data: datasetOne,
-                    backgroundColor: ["rgb(30, 30, 148)"],
+                    backgroundColor: ["rgba(30, 30, 148, 0.70)"],
                 },
 
             ],
@@ -418,6 +425,7 @@ const Playercompare = () => {
             <Col className=' col-12 col-lg-7 chart-container p-2 mt-5 mb-2'>
                 <div className='piebar col-12  '>
                     <Bar data={dummyDataBar}
+                    height={200}
                         options={{
                             responsive: true,
                             maintainAspectRatio: true,
@@ -472,7 +480,7 @@ const Playercompare = () => {
             <Col className=' col-12 col-lg-5 chart-container p-2 mt-5 mb-2'>
                 <div className='radar col-12  '>
                     <Radar data={radarData}
-                        height={100}
+                        height={600}
                         options={{
                             responsive: true,
                             plugins: {
@@ -481,6 +489,7 @@ const Playercompare = () => {
                                 },
                                 legend: {
                                     display: true,
+                                    position: 'bottom',
 
                                 }
                             },

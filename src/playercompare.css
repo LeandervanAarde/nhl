@@ -14,6 +14,7 @@
 .autocomplete-items {
     position: absolute;
     border: 1px solid #2b2b2b;
+ 
     border-top: none;
     z-index: 99;
     top: 100%;
@@ -85,8 +86,27 @@ input-group{
 
 
 /* insert player card css  */
+.inner{
+    background-color: rgb(223, 220, 220);
+    border-radius: 12px;
+    height: 600px;
+}
 
+.inner p{
+    color: black;
+    margin-top: 35px !important;
+    margin-left: 20px;
+}
+.player-icon{
+    background-color: black;
+    height: 130px;
+    border-radius: 110px;
+    
+}
 
+.official-stat{
+    margin-left: 70%;
+}
 
 
 
@@ -102,6 +122,7 @@ input-group{
     height: auto;
     padding-left: 2% !important;
     padding-right: 3% !important;
+    padding-bottom: 2% ;
 }
 
 
@@ -143,9 +164,11 @@ padding-top: 10px;
   }
 
 
+
+
 @media (min-width: 256px) and (max-width: 768px) {
     .piebar, .radar{
-        height: 40vh;
+        height: 50vh;
         background-color: #272626;
         padding: 1%;
         border-radius: 8px;
