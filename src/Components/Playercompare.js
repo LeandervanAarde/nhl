@@ -8,6 +8,7 @@ import axios from 'axios';
 import 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import { Radar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { useState, useEffect, useRef } from "react";
 import players from '../Players.js';
 
@@ -384,8 +385,7 @@ const Playercompare = () => {
                 <div className='button col-3' onClick={() =>{
                     playerOneId();
                     createGraph();
-                    createRadarGraph();
-                 
+                    createRadarGraph(); 
                 }} ><p>Find Player</p></div>
             </Col>
 
@@ -490,7 +490,6 @@ const Playercompare = () => {
                                 legend: {
                                     display: true,
                                     position: 'bottom',
-
                                 }
                             },
                         }}
@@ -498,6 +497,7 @@ const Playercompare = () => {
                 </div>
             </Col>
         </Row>
+        
     );
 };
 

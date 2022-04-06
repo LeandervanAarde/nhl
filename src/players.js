@@ -49761,10 +49761,7 @@ const players= [
     id: 8470229,
     name: "Scott Dobben"
   },
-  {
-    id: 8470594,
-    name: "Marc-Andre Fleury"
-  },
+ 
   {
     id: 8470236,
     name: "Martin Cizek"

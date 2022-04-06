@@ -10,13 +10,18 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios';
 import { PolarArea } from "react-chartjs-2";
 import Playercard from "./Playercard";
+import Dropdownitem from "./Dropdownitem";
 //render function
 const Teamcompare = () => {
     //set the list so it can be accessed outside
     const [teamList, setTeamList] = useState([]);
     //get the value of the input
     const linkValue = useRef();
-    const apiBase = 'https://statsapi.web.nhl.com/'; 
+    const apiBase = 'https://statsapi.web.nhl.com/';
+    const[teamLink, setTeamLink] = useState(); 
+    const[finalLink, setFinalLink] = useState();
+    const teamOne = useRef();
+    const teamTwo = useRef();
     
     //use effect ensures that it will only run once
     useEffect(() => {
@@ -30,30 +35,18 @@ const Teamcompare = () => {
                 const allTeams = [];
                 // loop through data and push certain info to that array
                 for (let i = 0; i < teams.length; i++) {
-
                     allTeams.push({
                         id: teams[i].id,
                         name: teams[i].teamName,
-                        link: teams[i].link,
+                        link:'https://statsapi.web.nhl.com/'+teams[i].link,
                     });
+                    setTeamLink(allTeams[i].link);
                 }
-                // console.log(allTeams);
-                // set the all teams to an array that can now be called outside
-
-         
-                setTeamList(allTeams);
+                //set teams so they can be called outside useEffect
+              setTeamList(allTeams);           
+              
             })
-            
-
-
-
-    }, [])
-
-
-    console.log(teamList);
-
-
-
+    }, []);
 
 
 
@@ -80,53 +73,30 @@ const Teamcompare = () => {
 
     };
 
-
-    // function getTeam(){
-    //     let value = linkValue.value;
-    //     for(let i= 0; teamList.length; i++){
-
-    //         if(value === teamList[i].name){
-    //             console.log(teamList)
-
-    //         }
-    //     }
-
-    // }
-
-    // onChange={getTeam}
-
     return (
         <Row className='team-compare-row'>
 
             <Col className='col-12 col-lg-4 input-container' id='input'>
 
-            <DropdownButton id="dropdown-custom" title="Player Statistic #1" className="mb-3 mt-4 col-12 input drop">
-                    <Dropdown.Header className='dropdown-head'>Choose player statistic #1 </Dropdown.Header>
-                    <Dropdown.Item href="#/action-2"></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3"></Dropdown.Item>
-                    <Dropdown.Item href="#/action-3"> </Dropdown.Item>
-                    <Dropdown.Item href="#/action-1"></Dropdown.Item>
-                    <Dropdown.Item href="#/action-1"> </Dropdown.Item>
-                    <Dropdown.Item href="#/action-1"></Dropdown.Item>
-                    <Dropdown.Item href="#/action-1"> </Dropdown.Item>
-                    <Dropdown.Item href="#/action-1"></Dropdown.Item>
-                </DropdownButton>
+            <select className='col-12 dropdown' ref={teamOne}>
+                    <option disabled={true} selected={true} > Select Team #1</option>
+                    {teamList && teamList.map((item) =>
+                        <Dropdownitem key={item.id} name={item.name} link={item.link} />
+                    )}
+             </select>
+
 
             </Col>
 
             <Col className='col-12 col-lg-4 offset-lg-4  input-container'>
 
-            <DropdownButton id="dropdown-custom" title="Player Statistic #1" className="mb-3 mt-4 col-12 input drop">
-                    <Dropdown.Header className='dropdown-head'>Choose player statistic #1 </Dropdown.Header>
-                    <Dropdown.Item href="#/action-2">Shots</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Goals</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Shot Pct</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Assists</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Powerplay Goals</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Points</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Penalties (min)</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Plus Minus</Dropdown.Item>
-                </DropdownButton>
+            <select className='col-12 dropdown' ref={teamTwo}>
+                    <option disabled={true} selected={true} > Select Team #2</option>
+                    {teamList && teamList.map((item) =>
+                        <Dropdownitem key={item.id} name={item.name} link={item.link} />
+                    )}
+             </select>
+
 
             </Col>
 

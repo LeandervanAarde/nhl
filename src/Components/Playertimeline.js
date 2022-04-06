@@ -24,7 +24,24 @@ const Playertimeline = () => {
     const [playerOnenr, setPlayerOnenr] = useState();
     const [playerStatistics, setPlayerStatistics] = useState([]);
     const dropVal = useRef();
+    const dropYear = useRef();
     const [dropDownValue, setDropDownValue] = useState();
+    const [stats, setStats] = useState([]);
+    const [lineData, setLineData] = useState(
+        {
+
+            labels: ['2017', '2018', '2019', '2020', '2021', '2022'],
+            datasets: [
+                {
+                    label: "stat one",
+                    data: [0,0,0,0,0],
+                    backgroundColor: ["rgb(200 ,16, 46)"],
+                },
+            ],
+            borderwidth: 1
+    
+        }
+    )
 
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
@@ -103,50 +120,78 @@ const Playertimeline = () => {
                     }   
                 }
                 setPlayerStatistics(playerStats);
-       
-          
+               
           
             })
     }, [apiLink]);
 
-    console.log(playerStatistics);
+    // console.log(playerStatistics);
 
  
 
     function displayData(){
         let inptVal = dropVal.current.value;
-        for(let k = 0; k < playerStatistics.length; k++){
-
-            if(inptVal === "Goals"){
-             if(playerStatistics[k].year){
-
-
-             }
-
+        let inputYear = dropYear.current.value; 
+        let startYear;
+        let intYear = startYear +5;
+        for(let i =0; i< playerStatistics.length; i++){
+            if(inputYear === playerStatistics[i].season){
+                startYear = i;
+                intYear = startYear+5;
+                console.log(intYear);
             }
-            console.log(playerStatistics[k].goals)
-            console.log("fired");
+
         }
-       
-    }
+        let singleStatArr = [];
 
+        for(let k = startYear; k < intYear; k++ ){
+            if(inptVal === "Goals"){
+                // console.log(playerStatistics[k].goals);
+                singleStatArr.push(
+                    playerStatistics[k].goals,
+                );
+            }  else if (inptVal === "Assists"){
+                // console.log(playerStatistics[k].goals);
+                singleStatArr.push(
+                  playerStatistics[k].goals,
+                );
+            } else if (inptVal === "Shots"){
+                // console.log(playerStatistics[k].shots);
+                singleStatArr.push(
+                   playerStatistics[k].goals,
+                );
+            } else if (inptVal === "Points"){
+                // console.log(playerStatistics[k].points);
+                singleStatArr.push(
+                    playerStatistics[k].points,
+                );
+            }
+            console.log(inptVal);
+            
+        }
+          setStats(singleStatArr);
 
-    const lineData = {
-
-        labels: ['2017', '2018', '2019', '2020', '2021', '2022'],
-        datasets: [
+          console.log(singleStatArr)
+          setLineData(
             {
 
-                label: "stat one",
-                data: [0,0,0,0],
-                backgroundColor: ["rgb(200 ,16, 46)"],
+                labels: ['2017', '2018', '2019', '2020', '2021'],
+                datasets: [
+                    {
+                        label: "stat one",
+                        data: singleStatArr,
+                        backgroundColor: ["rgb(200 ,16, 46)"],
+                    },
+                ],
+                borderwidth: 1
+        
+            }
+        )
 
+    }
+    console.log(stats);
 
-            },
-        ],
-        borderwidth: 1
-
-    };
+    
 
 
     return (
@@ -171,8 +216,8 @@ const Playertimeline = () => {
             </Col>
 
             <Col className='col-12 col-lg-3 mt-3 input-container '>
-                <select className='col-12 dropdown'   ref={dropVal}>
-                    <option disabled={true} selected={true}> Select Player stat</option>
+                <select className='col-12 dropdown'  onChange={displayData} ref={dropVal}>
+                    <option disabled={true} defaultValue={true}  > Select Player stat</option>
                     <option value="Goals" >Goals</option>
                     <option value="Assists" >Assists</option>
                     <option value="Shots" >Shots</option>
@@ -185,8 +230,8 @@ const Playertimeline = () => {
 
 
             <Col className='col-12 col-lg-4 mt-3 offset input-container'>
-                <select className='col-12 dropdown'>
-                    <option disabled="true" > Select start Season</option>
+                <select className='col-12 dropdown' ref={dropYear} onChange={displayData}>
+                    <option disabled={true} > Select start Season</option>
                     {playerStatistics && playerStatistics.map((item) =>
                         <Dropdownitem season={item.season} />
                     )}

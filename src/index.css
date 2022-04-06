@@ -12,3 +12,23 @@
   margin-top: 2% !important;
   height: 50px;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2b2b2b; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 16, 46 , 0.2); 
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
