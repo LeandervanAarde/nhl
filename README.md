@@ -19,7 +19,7 @@
 <p align="center">
 
   <a href="https://github.com/LeandervanAarde/nhl">
-    <img src="src/Assets/Logo.svg" alt="Logo" width="140">
+    <img src="public/Assets/Logo.svg" alt="Logo" width="140">
   </a>
   
   <h3 align="center">Chel | NHL</h3>
@@ -77,11 +77,11 @@ Welcome to CHEL! CHEL is a web based application that tracks the statistics of N
 able to view the top Teams in the league, a range of player statistics being compared and teams being compared. You are also able to track the performance of these players over the course of their careers in categories. Live scores are updated daily to give users the latest scores on the most exciting games from the past 24 hours. 
 
 ### Built With
-* [Css]
+* [Css](no webiste/provided)
 * [React](https://reactjs.org/)
 * [Chartsjs](https://www.chartjs.org/)
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-* [Axios] (https://axios-http.com/docs/intro)
+* [Axios](https://axios-http.com/docs/intro)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
