@@ -4,8 +4,6 @@ import Col from 'react-bootstrap/Col';
 import '../Playertimeline.css';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
 import 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
@@ -85,7 +83,7 @@ const Playertimeline = () => {
                 let idOne = players[i].id;
 
                 setPlayerOnenr(idOne);
-                setApiLink('https://statsapi.web.nhl.com/api/v1/people/' + idOne + '/stats?stats=yearByYear', 0);
+                setApiLink('https://statsapi.web.nhl.com/api/v1/people/' + idOne + '/stats?stats=yearByYear');
 
             }
 
@@ -153,12 +151,12 @@ const Playertimeline = () => {
             }  else if (inptVal === "Assists"){
                 // console.log(playerStatistics[k].goals);
                 singleStatArr.push(
-                  playerStatistics[k].goals,
+                  playerStatistics[k].assists,
                 );
             } else if (inptVal === "Shots"){
                 // console.log(playerStatistics[k].shots);
                 singleStatArr.push(
-                   playerStatistics[k].goals,
+                   playerStatistics[k].shots,
                 );
             } else if (inptVal === "Points"){
                 // console.log(playerStatistics[k].points);
@@ -206,17 +204,17 @@ const Playertimeline = () => {
                         onChange={updatePlayerName}
                     />
                 </InputGroup>
-                <div className='button col-10 offset-1' 
-            
-            onClick={() =>{{}
-                playerOneId();
-                displayData();
-            }} ><p>Find Player</p></div>
+                
 
             </Col>
 
             <Col className='col-12 col-lg-3 mt-3 input-container '>
-                <select className='col-12 dropdown'  onChange={displayData} ref={dropVal}>
+                <select className='col-12 dropdown'  
+                    onChange={() =>{{}
+                    playerOneId();
+                    displayData();
+                }}
+                ref={dropVal}>
                     <option disabled={true} defaultValue={true}  > Select Player stat</option>
                     <option value="Goals" >Goals</option>
                     <option value="Assists" >Assists</option>

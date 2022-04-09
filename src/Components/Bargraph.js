@@ -10,7 +10,7 @@ const Bargraph = (props) => {
 
             labels: props.name,
             datasets: [{
-                label: "hotter totter",
+             
                 data: props.wins,
                 backgroundColor: [" rgba(200 ,16, 46, 0.60)","rgba(240, 62, 65, 0.7)","rgba(30, 30, 148, 0.70)","rgba(169, 169, 169, 0.7)", "rgba(56, 0, 84, 0.7)" ],
 
@@ -19,8 +19,8 @@ const Bargraph = (props) => {
             }],      
             borderwidth: 1
 
-        }} height={350} options ={{
-            responsive: true,
+        }} height={260} options ={{
+            responsive: false,
             maintainAspectRatio: true,
             plugins: {
                 decimation: {
@@ -39,6 +39,7 @@ const Bargraph = (props) => {
                 },
                 legend: {
                     position: "top",
+                    display: false,
                     label: {
                         display: false,
                         padding: 30,

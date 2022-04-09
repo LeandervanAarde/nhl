@@ -1,10 +1,6 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import '../Overview.css';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import axios from 'axios';
 import 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import { Radar } from 'react-chartjs-2';
@@ -18,8 +14,8 @@ const Topteams = (props) => {
         <Col className='col-12 info'>
                 
             <div className='team info'>
+                <h3 className='team-name'> Team : <b>{props.name}</b> </h3> 
                 <p key={props.id}> League Rank: {props.rank}</p> 
-                <p> Team : <b>{props.name}</b> </p> 
                 <p> Team Wins: {props.wins} </p> 
                 <p> Team Losses: {props.losses} </p> 
              </div>

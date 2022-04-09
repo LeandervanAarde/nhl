@@ -12,6 +12,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { useState, useEffect, useRef } from "react";
 import Topteams from './Topteams';
 import Bargraph from './Bargraph';
+import Doughnutgraph from './Doughnutgraph';
 
 
 const Overview = () => {
@@ -65,7 +66,7 @@ const Overview = () => {
         <Row className='overview-row'>
             <Col className='col-12 intro '>
                 <h1> OVERVIEW</h1>
-                <p>Here you can view the teams standings and their amount of wins vs losses.</p>
+                <p className='text-center'>Here you can get an introduction to <strong>CHEL</strong> a list of the top 10 teams provided with some contextualized information on the top 2 performing teams in the league as it currently stands!</p>
             </Col>
 
             <Col className='col-12 col-md-5 teams mt-5 mb-5'>
@@ -80,11 +81,11 @@ const Overview = () => {
             </Col>
  
             <Col className='col-12 col-lg-5 mt-4 mb-5 graph'>
-            
+            <Doughnutgraph/>
             </Col>
         
             <Col className='col-12 col-lg-6 offset-1 mt-4 mb-5 graph'>
-            
+                
             </Col>
 
             <Col className='col-12 col-lg-6  mt-4 mb-5 graph'>
