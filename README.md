@@ -29,7 +29,7 @@
     <br/>
     <i> This does exclude the Goalies of the NHL</i>
     <br />
-    <p> Find the link to the NHL API <a href="https://gitlab.com/dword4/nhlapi/-/blob/master/stats-api.md#team-stats"> here</a> </p>
+    <p align="center"> Find the link to the NHL API <a href="https://gitlab.com/dword4/nhlapi/-/blob/master/stats-api.md#team-stats"> here</a> </p>
    <br />
    <br />
    <a href="path/to/demonstration/video">View Demo</a>
@@ -114,7 +114,7 @@ Run the following in the command-line to install all the required dependencies:
    npm install
    ```
 
-4. No API keys are requited
+4. No API keys are required
 
 
 <!-- FEATURES AND FUNCTIONALITY-->
@@ -124,9 +124,9 @@ Run the following in the command-line to install all the required dependencies:
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 ![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
 
-### All The Latest Space X Data! 
+### Get up to date statistics of NHL players!! 
 
-Usding the Space X API, we have collected and collated all the most relevant Space X data into once seemless react experience!
+Through the use of the NHL-API we were able to get the most relevant data of the NHL!
 
 ![image3][image3]
 ### Feature 2
