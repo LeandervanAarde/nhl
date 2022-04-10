@@ -15,10 +15,9 @@
 
 .circle{
     margin-left: 6%;
-    background-color: red;
     height: 100%;
     width: 20%;
-    border-radius: 100%;
+    border-radius: 30%;
     float: left;
 }
 
@@ -40,11 +39,11 @@
 @media (min-width: 356px) and (max-width: 768px) {
   .circle{
     margin-left: 1%;
-    background-color: red;
     height: 70%;
     width: 30%;
-    border-radius: 100%;
+    border-radius: 25%;
     float: left;
+    overflow: hidden;
 }
 
 .text{

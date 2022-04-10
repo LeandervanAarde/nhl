@@ -1,133 +1,134 @@
 const logos={
- "NHL_Logos": [
-  {
-   "name": "Anaheim Ducks",
-   "url": "https://www.sportslogos.net/logos/list_by_team/1736/Anaheim_Ducks/"
-  },
-  {
-   "name": "Arizona Coyotes",
-   "url": "https://www.sportslogos.net/logos/list_by_team/5263/Arizona_Coyotes/"
-  },
-  {
-   "name": "Boston Bruins",
-   "url": "https://www.sportslogos.net/logos/list_by_team/3/Boston_Bruins/"
-  },
-  {
-   "name": "Buffalo Sabres",
-   "url": "https://www.sportslogos.net/logos/list_by_team/4/Buffalo_Sabres/"
-  },
-  {
-   "name": "Calgary Flames",
-   "url": "https://www.sportslogos.net/logos/list_by_team/5/Calgary_Flames/"
-  },
-  {
-   "name": "Carolina Hurricanes",
-   "url": "https://www.sportslogos.net/logos/list_by_team/6/Carolina_Hurricanes/"
-  },
-  {
-   "name": "Chicago Blackhawks",
-   "url": "https://www.sportslogos.net/logos/list_by_team/7/Chicago_Blackhawks/"
-  },
-  {
-   "name": "Colorado Avalanche",
-   "url": "https://www.sportslogos.net/logos/list_by_team/8/Colorado_Avalanche/"
-  },
-  {
-   "name": "Columbus Blue Jackets",
-   "url": "https://www.sportslogos.net/logos/list_by_team/9/Columbus_Blue_Jackets/"
-  },
-  {
-   "name": "Dallas Stars",
-   "url": "https://www.sportslogos.net/logos/list_by_team/10/Dallas_Stars/"
-  },
-  {
-   "name": "Detroit Red Wings",
-   "url": "https://www.sportslogos.net/logos/list_by_team/11/Detroit_Red_Wings/"
-  },
-  {
-   "name": "Edmonton Oilers",
-   "url": "https://www.sportslogos.net/logos/list_by_team/12/Edmonton_Oilers/"
-  },
-  {
-   "name": "Florida Panthers",
-   "url": "https://www.sportslogos.net/logos/list_by_team/13/Florida_Panthers/"
-  },
-  {
-   "name": "Los Angeles Kings",
-   "url": "https://www.sportslogos.net/logos/list_by_team/14/Los_Angeles_Kings/"
-  },
-  {
-   "name": "Minnesota Wild",
-   "url": "https://www.sportslogos.net/logos/list_by_team/15/Minnesota_Wild/"
-  },
-  {
-   "name": "Montreal Canadiens",
-   "url": "https://www.sportslogos.net/logos/list_by_team/16/Montreal_Canadiens/"
-  },
-  {
-   "name": "Nashville Predators",
-   "url": "https://www.sportslogos.net/logos/list_by_team/17/Nashville_Predators/"
-  },
-  {
-   "name": "New Jersey Devils",
-   "url": "https://www.sportslogos.net/logos/list_by_team/18/New_Jersey_Devils/"
-  },
-  {
-   "name": "New York Islanders",
-   "url": "https://www.sportslogos.net/logos/list_by_team/19/New_York_Islanders/"
-  },
-  {
-   "name": "New York Rangers",
-   "url": "https://www.sportslogos.net/logos/list_by_team/20/New_York_Rangers/"
-  },
-  {
-   "name": "Ottawa Senators",
-   "url": "https://www.sportslogos.net/logos/list_by_team/21/Ottawa_Senators/"
-  },
-  {
-   "name": "Philadelphia Flyers",
-   "url": "https://www.sportslogos.net/logos/list_by_team/22/Philadelphia_Flyers/"
-  },
-  {
-   "name": "Pittsburgh Penguins",
-   "url": "https://www.sportslogos.net/logos/list_by_team/24/Pittsburgh_Penguins/"
-  },
-  {
-   "name": "San Jose Sharks",
-   "url": "https://www.sportslogos.net/logos/list_by_team/26/San_Jose_Sharks/"
-  },
-  {
-   "name": "Seattle Kraken",
-   "url": "https://www.sportslogos.net/logos/list_by_team/6740/Seattle_Kraken/"
-  },
-  {
-   "name": "St. Louis Blues",
-   "url": "https://www.sportslogos.net/logos/list_by_team/25/St_Louis_Blues/"
-  },
-  {
-   "name": "Tampa Bay Lightning",
-   "url": "https://www.sportslogos.net/logos/list_by_team/27/Tampa_Bay_Lightning/"
-  },
-  {
-   "name": "Toronto Maple Leafs",
-   "url": "https://www.sportslogos.net/logos/list_by_team/28/Toronto_Maple_Leafs/"
-  },
-  {
-   "name": "Vancouver Canucks",
-   "url": "https://www.sportslogos.net/logos/list_by_team/29/Vancouver_Canucks/"
-  },
-  {
-   "name": "Vegas Golden Knights",
-   "url": "https://www.sportslogos.net/logos/list_by_team/6114/Vegas_Golden_Knights/"
-  },
-  {
-   "name": "Washington Capitals",
-   "url": "https://www.sportslogos.net/logos/list_by_team/30/Washington_Capitals/"
-  },
-  {
-   "name": "Winnipeg Jets",
-   "url": "https://www.sportslogos.net/logos/list_by_team/3050/Winnipeg_Jets/"
-  }
- ]
+ "NHL_Logos":
+ [
+	{
+		"name":"Anaheim Ducks",
+		"url":"https://content.sportslogos.net/logos/1/1736/thumbs/173616512014.gif"
+	},
+	{
+		"name":"Arizona Coyotes",
+		"url":"https://content.sportslogos.net/logos/1/5263/thumbs/526382732022.gif"
+	},
+	{
+		"name":"Boston Bruins",
+		"url":"https://content.sportslogos.net/logos/1/3/thumbs/venf9fmhgnsawnxxvehf.gif"
+	},
+	{
+		"name":"Buffalo Sabres",
+		"url":"https://content.sportslogos.net/logos/1/4/thumbs/454932021.gif"
+	},
+	{
+		"name":"Calgary Flames",
+		"url":"https://content.sportslogos.net/logos/1/5/thumbs/548202021.gif"
+	},
+	{
+		"name":"Carolina Hurricanes",
+		"url":"https://content.sportslogos.net/logos/1/6/thumbs/fotih31tn5r345nufo5xxayh3.gif"
+	},
+	{
+		"name":"Chicago Blackhawks",
+		"url":"https://content.sportslogos.net/logos/1/7/thumbs/56.gif"
+	},
+	{
+		"name":"Colorado Avalanche",
+		"url":"https://content.sportslogos.net/logos/1/8/thumbs/64.gif"
+	},
+	{
+		"name":"Columbus Blue Jackets",
+		"url":"https://content.sportslogos.net/logos/1/9/thumbs/jhepegs329pc7ugyypebl28wg.gif"
+	},
+	{
+		"name":"Dallas Stars",
+		"url":"https://content.sportslogos.net/logos/1/10/thumbs/1043322022.gif"
+	},
+	{
+		"name":"Detroit Red Wings",
+		"url":"https://content.sportslogos.net/logos/1/11/thumbs/yo3wysbjtagzmwj37tb11u0fh.gif"
+	},
+	{
+		"name":"Edmonton Oilers",
+		"url":"https://content.sportslogos.net/logos/1/12/thumbs/1227282018.gif"
+	},
+	{
+		"name":"Florida Panthers",
+		"url":"https://content.sportslogos.net/logos/1/13/thumbs/1380782017.gif"
+	},
+	{
+		"name":"Los Angeles Kings",
+		"url":"https://content.sportslogos.net/logos/1/14/thumbs/1422202020.gif"
+	},
+	{
+		"name":"Minnesota Wild",
+		"url":"https://content.sportslogos.net/logos/1/15/thumbs/1588102014.gif"
+	},
+	{
+		"name":"Montreal Canadiens",
+		"url":"https://content.sportslogos.net/logos/1/16/thumbs/124.gif"
+	},
+	{
+		"name":"Nashville Predators",
+		"url":"https://content.sportslogos.net/logos/1/17/thumbs/lvchw3qfsun2e7oc02kh2zxb6.gif"
+	},
+	{
+		"name":"New Jersey Devils",
+		"url":"https://content.sportslogos.net/logos/1/18/thumbs/32tfs723a3bes0p0hb4hgcy1u.gif"
+	},
+	{
+		"name":"New York Islanders",
+		"url":"https://content.sportslogos.net/logos/1/19/thumbs/1939112018.gif"
+	},
+	{
+		"name":"New York Rangers",
+		"url":"https://content.sportslogos.net/logos/1/20/thumbs/144.gif"
+	},
+	{
+		"name":"Ottawa Senators",
+		"url":"https://content.sportslogos.net/logos/1/21/thumbs/2111292021.gif"
+	},
+	{
+		"name":"Philadelphia Flyers",
+		"url":"https://content.sportslogos.net/logos/1/22/thumbs/161.gif"
+	},
+	{
+		"name":"Pittsburgh Penguins",
+		"url":"https://content.sportslogos.net/logos/1/24/thumbs/2463622017.gif"
+	},
+	{
+		"name":"San Jose Sharks",
+		"url":"https://content.sportslogos.net/logos/1/26/thumbs/dmo1xf3z4pph27vmg3gf.gif"
+	},
+	{
+		"name":"Seattle Kraken",
+		"url":"https://content.sportslogos.net/logos/1/6740/thumbs/674079522022.gif"
+	},
+	{
+		"name":"St. Louis Blues",
+		"url":"https://content.sportslogos.net/logos/1/25/thumbs/187.gif"
+	},
+	{
+		"name":"Tampa Bay Lightning",
+		"url":"https://content.sportslogos.net/logos/1/27/thumbs/97hhvk8e5if0riesnex30etgz.gif"
+	},
+	{
+		"name":"Toronto Maple Leafs",
+		"url":"https://content.sportslogos.net/logos/1/28/thumbs/2887612017.gif"
+	},
+	{
+		"name":"Vancouver Canucks",
+		"url":"https://content.sportslogos.net/logos/1/29/thumbs/2920842020.gif"
+	},
+	{
+		"name":"Vegas Golden Knights",
+		"url":"https://content.sportslogos.net/logos/1/6114/thumbs/611426842018.gif"
+	},
+	{
+		"name":"Washington Capitals",
+		"url":"https://content.sportslogos.net/logos/1/30/thumbs/llrs2zxi127vkqgcsvfb.gif"
+	},
+	{
+		"name":"Winnipeg Jets",
+		"url":"https://content.sportslogos.net/logos/1/3050/thumbs/z9qyy9xqoxfjn0njxgzoy2rwk.gif"
+	},
+]
 };
 export default logos;
