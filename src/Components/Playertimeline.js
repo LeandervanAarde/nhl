@@ -9,10 +9,7 @@ import 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
 import players from '../Players.js';
 import { useState, useEffect, useRef } from "react";
-import Dropitem from './Dropdownitem';
 import Dropdownitem from './Dropdownitem';
-
-
 
 const Playertimeline = () => {
     const inputVal = useRef();
@@ -71,7 +68,6 @@ const Playertimeline = () => {
                     setPlayerName(inputVal.current.value);
                     closeAllLists();
                 });
-
             }
         }
     };
@@ -90,7 +86,6 @@ const Playertimeline = () => {
         }
 
     }
-   
 
     useEffect((index) => {
 
@@ -102,7 +97,7 @@ const Playertimeline = () => {
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].league.name === 'National Hockey League') {
                         playerStats.push({
-                            season: data[i].season,
+                            season: data[i].season.substr(0,4)+" / "+ data[i].season.substr(4,8),
                             assists: data[i].stat.assists,
                             goals: data[i].stat.goals,
                             powerPlayPoints: data[i].stat.powerPlayPoints,
@@ -118,27 +113,30 @@ const Playertimeline = () => {
                     }   
                 }
                 setPlayerStatistics(playerStats);
-               
-          
             })
     }, [apiLink]);
-
-    // console.log(playerStatistics);
-
- 
 
     function displayData(){
         let inptVal = dropVal.current.value;
         let inputYear = dropYear.current.value; 
         let startYear;
         let intYear = startYear +5;
+        let seasons;
+        let yearSeperate = Number(inputYear.substr(0,4));
+        if(yearSeperate > Number(playerStatistics[playerStatistics.length-5].season.substr(0,4))){
+            inputYear = playerStatistics[playerStatistics.length-5].season;
+            yearSeperate = Number(inputYear.substr(0,4));
+        }
+        console.log(inputYear)
+        console.log("the year is " + yearSeperate);
+        let splitYear= [yearSeperate+" / "+ (yearSeperate+1), yearSeperate+1+" / "+ (yearSeperate+2), yearSeperate+2+" / "+ (yearSeperate+3), yearSeperate+3+" / "+ (yearSeperate+4), yearSeperate+4+" / "+ (yearSeperate+5)];
         for(let i =0; i< playerStatistics.length; i++){
             if(inputYear === playerStatistics[i].season){
                 startYear = i;
                 intYear = startYear+5;
                 console.log(intYear);
+                seasons = startYear[i] +5;
             }
-
         }
         let singleStatArr = [];
 
@@ -164,33 +162,23 @@ const Playertimeline = () => {
                     playerStatistics[k].points,
                 );
             }
-            console.log(inptVal);
-            
         }
           setStats(singleStatArr);
 
-          console.log(singleStatArr)
           setLineData(
             {
-
-                labels: ['2017', '2018', '2019', '2020', '2021'],
+                labels: splitYear,
                 datasets: [
                     {
-                        label: "stat one",
+                        label: "     "+ inptVal,
                         data: singleStatArr,
                         backgroundColor: ["rgb(200 ,16, 46)"],
                     },
                 ],
                 borderwidth: 1
-        
             }
         )
-
-    }
-    console.log(stats);
-
-    
-
+    }    
 
     return (
         <Row className='timeline-row'>
@@ -204,8 +192,6 @@ const Playertimeline = () => {
                         onChange={updatePlayerName}
                     />
                 </InputGroup>
-                
-
             </Col>
 
             <Col className='col-12 col-lg-3 mt-3 input-container '>
@@ -224,28 +210,19 @@ const Playertimeline = () => {
 
             </Col>
 
-
-
-
             <Col className='col-12 col-lg-4 mt-3 offset input-container'>
                 <select className='col-12 dropdown' ref={dropYear} onChange={displayData}>
                     <option disabled={true} > Select start Season</option>
                     {playerStatistics && playerStatistics.map((item) =>
-                        <Dropdownitem season={item.season} />
+                        <Dropdownitem name={item.season} />
                     )}
                 </select>
             </Col>
 
-
-            
-        
-
             <Col className='col-12 chart-container mt-5 mb-5'>
                 <div className='timeline col-12 mb-2'>
                     <Line data={lineData}
-
                         options={{
-
                             elements: {
                                 line: {
                                     borderWidth: 9,
@@ -262,26 +239,18 @@ const Playertimeline = () => {
                                 legend: {
                                     position: "bottom",
                                     labels: {
-
                                         padding: 30,
                                         boxWidth: 30,
                                         boxHeight: 20,
-
-
                                     }
                                 }
                             },
-
-
-
                         }}
-
                     />
                 </div>
             </Col>
 
         </Row>
-
     );
 };
 

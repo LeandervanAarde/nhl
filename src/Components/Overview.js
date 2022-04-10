@@ -2,14 +2,9 @@ import React from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import '../Overview.css';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
 import axios from 'axios';
 import 'chart.js/auto';
-import { Bar } from 'react-chartjs-2';
-import { Radar } from 'react-chartjs-2';
-import { Doughnut } from 'react-chartjs-2';
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import Topteams from './Topteams';
 import Bargraph from './Bargraph';
 import Doughnutgraph from './Doughnutgraph';
@@ -17,9 +12,9 @@ import Doughnutgraph from './Doughnutgraph';
 
 const Overview = () => {
     const [teamsList, setTeamslist] = useState([]);
-    const[startData, setStartData] = useState();
     const[wins, setWins] =useState([]);
     const[names, setNames] =useState([]);
+
     
     useEffect(() => {
         axios.get("https://statsapi.web.nhl.com/api/v1/standings")
@@ -55,12 +50,12 @@ const Overview = () => {
     const teamData = teamsList.map((item) => <Topteams key={item.id} name={item.name} wins={item.wins} losses={item.losses} rank={item.rank}  powerplay={item.powerPlayRank} />);
     const winsData = wins.map((item) => item);
     const barInfo = names.map((item) => <Bargraph name={item} wins={winsData[0]}/>);
- 
+   let topTwoTeams = teamsList.map((item) => <Doughnutgraph id={item.id} name={item.name} wins={item.wins} losses={item.losses}/>);
 
-    console.log(winsData);
 
-    
+  
 
+  
 
     return (
         <Row className='overview-row'>
@@ -80,20 +75,12 @@ const Overview = () => {
                 
             </Col>
  
-            <Col className='col-12 col-lg-5 mt-4 mb-5 graph'>
-            <Doughnutgraph/>
+            <Col className='col-12 col-lg-5 mt-4 mb-5 graph '>
+            {topTwoTeams[0]}
             </Col>
         
-            <Col className='col-12 col-lg-6 offset-1 mt-4 mb-5 graph'>
-                
-            </Col>
-
-            <Col className='col-12 col-lg-6  mt-4 mb-5 graph'>
-            
-            </Col>
-
-            <Col className='col-12 col-lg-5 offset-1 mt-4 mb-5 graph'>
-            
+            <Col className='col-12 col-lg-5  mt-4 mb-5 offset-lg-2 graph'>
+            {topTwoTeams[1]}
             </Col>
 
         </Row>

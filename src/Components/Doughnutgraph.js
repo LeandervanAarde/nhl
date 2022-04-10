@@ -1,27 +1,19 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col';
 import '../Overview.css';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import axios from 'axios';
 import 'chart.js/auto';
-import { Bar } from 'react-chartjs-2';
-import { Radar } from 'react-chartjs-2';
-import { Doughnut, Pie } from 'react-chartjs-2';
-import { useState, useEffect, useRef } from "react";
-import Topteams from './Topteams';
+import { Doughnut} from 'react-chartjs-2';
 
-const Doughnutgraph = () => {
+
+const Doughnutgraph = (props) => {
     return (
         <Doughnut data ={{
 
 
-            labels:["hello from", "the otherside",],
+            labels:["Wins", "Losses",],
             datasets: [{
                 label: "hotter totter",
-                data: [10,23],
-                backgroundColor: ["rgba(169, 169, 169, 0.7)", "rgba(56, 0, 84, 0.7)" ],
+                data: [props.wins, props.losses],
+                backgroundColor: ["rgb(30, 30, 148)", "rgb(200 ,16, 46)"],
             }],      
             borderwidth: 0
 
@@ -34,7 +26,7 @@ const Doughnutgraph = () => {
                 },
                 title: {
                     display: true,
-                    text: "Wins vs/losses ",
+                    text: props.name + " Wins vs losses ",
                     position: "bottom",
                     color: "white",
                     font: {

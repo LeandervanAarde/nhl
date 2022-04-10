@@ -13,8 +13,6 @@ import { useState, useEffect, useRef } from "react";
 import players from '../Players.js';
 
 const Playercompare = () => {
-    //  GO TO LINE #314
-    // let axiosurl= 'https://statsapi.web.nhl.com/api/v1/people/' +id; 
     const [playerOneName, setPlayerOneName] = useState("Choose player name");
     const [playerTwoName, setPlayerTwoName] = useState("Choose player name");
     const [playerName, setPlayerName] = useState();
@@ -229,7 +227,6 @@ const Playercompare = () => {
         }
     };
 
-
     function playerTwoId() {
 
         for (let i = 0; i < players.length; i++) {
@@ -307,11 +304,6 @@ const Playercompare = () => {
 
     }, [apiLinkTwo])
 
-    // const playerTwoGraph = playerTwoStatistics.map((item) => <></>)
-    // sdc
-
-    console.log(playerOneStatistics);
-
     function createGraph(data, index) {
 
         let tmpBar = playerOneStatistics;
@@ -328,7 +320,7 @@ const Playercompare = () => {
 
                     label: playerName,
                     data: datasetZero,
-                    backgroundColor: [" rgb(200 ,16, 46)"],
+                    backgroundColor: ["rgb(200 ,16, 46)"],
                 },
                 {
                     label: playerNameTwo,
@@ -416,12 +408,6 @@ const Playercompare = () => {
                 {/* {Showplayer2}  */}
             </Col>
 
-            <Col className='col-12 toggle-holder'>
-                <div className=' col-4  col-lg-1  toggle-outline'>
-                    <div className='col-5 c slider-btn'></div>
-                </div>
-            </Col>
-
             <Col className=' col-12 col-lg-7 chart-container p-2 mt-5 mb-2'>
                 <div className='piebar col-12  '>
                     <Bar data={dummyDataBar}
@@ -468,7 +454,6 @@ const Playercompare = () => {
                                     hoverBorderColor: "white",
                                     hoverBorderWidth: 3,
                                     borderRadius: 10,
-
                                 }
                             }
                         }}
@@ -480,7 +465,7 @@ const Playercompare = () => {
             <Col className=' col-12 col-lg-5 chart-container p-2 mt-5 mb-2'>
                 <div className='radar col-12  '>
                     <Radar data={radarData}
-                        height={600}
+                        
                         options={{
                             responsive: true,
                             plugins: {
@@ -496,8 +481,7 @@ const Playercompare = () => {
                     />
                 </div>
             </Col>
-        </Row>
-        
+        </Row>   
     );
 };
 

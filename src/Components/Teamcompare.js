@@ -4,18 +4,16 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import '../Teamcompare.css';
 import axios from 'axios';
-import { PolarArea } from "react-chartjs-2";
-import Playercard from "./Playercard";
 import Dropdownitem from "./Dropdownitem";
 import Teamcards from "./Teamcards";
 import PolarRadar from "./PolarRadar";
-//render function
-const showTeam1 ="";
+
+let teamValues = [0,0,0,0,0,0,0,0,0,0];
+
 const Teamcompare = () => {
     //set the list so it can be accessed outside
     const [teamList, setTeamList] = useState([]);
     //get the value of the input
-    const linkValue = useRef();
     const teamOne = useRef();
     const teamTwo = useRef();
     const[team1Link, setTeam1Link] = useState(); 
@@ -63,8 +61,16 @@ const Teamcompare = () => {
         .then((res)=>{
             let data = res.data.teams[0].teamStats[0].splits;
            console.log(data); 
-           setTeam1(<PolarRadar powerPlayGoals ={data[0].stat.powerPlayGoals} points={data[0].stat.pts} wins ={data[0].stat.wins} losses={data[0].stat.losses} />);
-           setTeam1Card(<Teamcards powerPlayGoals={data[1].stat.powerPlayGoals} losses={data[1].stat.losses} wins={data[1].stat.wins} name={data[1].team.name} />);       
+           setTeam1Card(<Teamcards powerPlayGoals={data[1].stat.powerPlayGoals} losses={data[1].stat.losses} wins={data[1].stat.wins} name={data[1].team.name} />);  
+           teamValues[0] = data[0].stat.powerPlayGoals;
+           teamValues[1] = data[0].stat.pts;
+           teamValues[2] = data[0].stat.wins;
+           teamValues[3] = data[0].stat.losses;
+           teamValues[4] = data[1].team.name;
+
+           
+            setTeam1(<PolarRadar powerPlayGoals ={teamValues[0]} points={teamValues[1]} wins ={teamValues[2]} losses={teamValues[3]} name={teamValues[4]}  powerPlayGoals1 ={teamValues[5]} points1={teamValues[6]} wins1 ={teamValues[7]} losses1={teamValues[8]} name1={teamValues[9]}/>);
+
         }) 
     
  },[team1Link])
@@ -74,6 +80,7 @@ const Teamcompare = () => {
         for (let k = 0; k < teamList.length; k++ ){
             if(selected2 === teamList[k].name){
                 setTeam2Link(teamList[k].link);
+
             }
         }
         console.log(selected2)
@@ -83,18 +90,21 @@ const Teamcompare = () => {
         axios.get(team2Link) 
         .then((res)=>{
             let data = res.data.teams[0].teamStats[0].splits;
-            setTeam2(<PolarRadar powerPlayGoalsTwo={data[0].stat.powerPlayGoals} points={data[0].stat.pts} wins ={data[0].stat.wins} losses={data[0].stat.losses} />);
             setTean2Card(<Teamcards powerPlayGoals={data[1].stat.powerPlayGoals} losses={data[1].stat.losses} wins={data[1].stat.wins} name={data[1].team.name} />);
-        }); 
-        setGraphData(team1, team2);
+            teamValues[5] = data[0].stat.powerPlayGoals;
+            teamValues[6] = data[0].stat.pts;
+            teamValues[7] = data[0].stat.wins;
+            teamValues[8] = data[0].stat.losses;
+            teamValues[9] = data[1].team.name;
+ 
+            setTeam1(<PolarRadar powerPlayGoals ={teamValues[0]} points={teamValues[1]} wins ={teamValues[2]} losses={teamValues[3]} name={teamValues[4]}  powerPlayGoals1 ={teamValues[5]} points1={teamValues[6]} wins1 ={teamValues[7]} losses1={teamValues[8]} name1={teamValues[9]}/>);
+         }); 
+
  },[team2Link])
  
- console.log(team1);
- console.log(team2);
+ 
 
- console.log(graphData);
-
-
+//  setTeam2(<PolarRadar powerPlayGoals={data[0].stat.powerPlayGoals} points={data[0].stat.pts} wins ={data[0].stat.wins} losses={data[0].stat.losses} />);
 
  
   
@@ -137,8 +147,8 @@ const Teamcompare = () => {
             </Col>
 
             <Col className='col-12 chart-container chart-container-2 mt-5 mb-2'>
-                <div className='polar-radar col-10 offset-1  '>
-                 {graphData}
+                <div className='polar-radar col-12'>
+                 {team1} 
                 
                 </div>
             </Col>

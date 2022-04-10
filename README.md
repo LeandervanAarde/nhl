@@ -124,19 +124,18 @@ Run the following in the command-line to install all the required dependencies:
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 ![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
 
-### Get up to date statistics of NHL players!! 
+### Get up to date statistics of NHL players!
 
-Through the use of the NHL-API we were able to get the most relevant data of the NHL!
+Through the use of the NHL-API we were able to get the most relevant and up-to-date data of the NHL!
 
 ![image3][image3]
-### Feature 2
+### Compare players through chartsjs! 
 
-Description of Feature
+The implementation of chartjs allows users to compare data of player and teams in order to get a visual idea of where players stand in the NHL
 
 ![image4][image4]
-### Feature 3
-
-Description of Feature
+### Up to date scores
+See the latest and most up to date scores of 2 recent games
 
 ![image5][image5]
 
