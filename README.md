@@ -158,7 +158,7 @@ Throughout the concept ideation I would also be learning more about react and th
 ![image6][image6]
 
 ### Wireframes
- In ordder to get the best result and most user-centered design that I could produce, I had to create wireframes. Giving me the opportunity to identify any problems with the design earlier on and thus saving time during the development process.
+ In order to get the best result and most user-centered design that I could produce, I had to create wireframes. Giving me the opportunity to identify any problems with the design earlier on and thus saving time during the development process.
 ![image7](https://drive.google.com/uc?export=view&id=1KtPLYfFAE1i60t74tVP3uhXAGANK4bkM)
 ![image8](https://drive.google.com/uc?export=view&id=1uGaJs6NrIscBs15BjXAB35AaHelw1JiX)
 ![image9](https://drive.google.com/uc?export=view&id=1MxgcNI2FIrKrRUuhaOxtd6aNQJ0XdUfs)
@@ -177,14 +177,15 @@ The `Development Process` is the technical implementations and functionality don
 
 * Utilized React `Charts.JS` dependency for Data visualization
 * Implemented Routing with `React-Router v6`.
-* API End Point: link Here 
-* `Plugin` for this.
-* ETC.
+* API End Point: <a href="https://gitlab.com/dword4/nhlapi/-/blob/master/stats-api.md#team-stats">NHL API</a>
+* `Plugin` for <a href="https://modelviewer.dev/">Model viewer</a>
+* Implemented Responsiveness with `React-Bootstrap`.
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* What was good about this project, what did you learn.
-* What aspects did you enjoy.
+* Over the course of this project I have learned about the implementation of React and some of the basic capabilities. I have a better understanding of why the framework is so popular. I have a grown with a basic knowledge in components, axios calls, useStates, UseRef's and useEffects. 
+* I have learned about the implementation of React chartsjs and how to use props to implement Chartsjs
+* I enjoyed the challenges that this API brought me and solving issues in a different way. I definetly enjoyed the progression of this project and the final outcome that it has presented. Furthermoer, I enjoyed the general implementation of React, while there is much more to learn about React, I believe that this was a good starting point to have. 
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
@@ -196,14 +197,14 @@ The `Development Process` is the technical implementations and functionality don
 
 What aspects of this final build contribute to the `Above And Beyond` Component of your brief?
 <!-- what did you learn outside of the classroom and implement into your project-->
-* Name of Skill Explored.
-* Explain your understanding and execution of above skill.
+* Model Viewer
+* model-viewer is an easy to implement 3D modelviewer CDn, this allows for developers to insert a 3D model format into their code and for it to be displayed as a model instead of it being an image/gif. Developers are able to explore the interactiveness, such as users being able to interact with 3d models. 
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
-
-* Future 1.
-* Future 2.
+* in the future I would like to implement more of React's features and prebuilt items. 
+* In future I would like to implement the design decisions that I have made throughout this project, making this look more user friendly and making it more interactive
+* A future improvement is more use of reusable components, while this has reusable components to a certain extent, I have not taken full advantage of this. in future I will be implementing reusable components as I have an understanding of them now. 
 
 <!-- MOCKUPS -->
 ## Final Outcome
@@ -222,12 +223,12 @@ To see a run through of the application, click below:
 [View Demonstration](path/to/video/demonstration)
 
 
-See the [open issues](https://github.com/MikeMaynard14/termoneexample/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/LeandervanAarde/nhl/issues) for a list of proposed features (and known issues).
 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [MikeMaynard14](https://github.com/MikeMaynard14)
+* **Your Name & Surname** - [Leander van Aarde](https://github.com/LeandervanAarde/nhl)
 
 <!-- LICENSE -->
 ## License
@@ -237,8 +238,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Your Name & Surname** - [email@address](mailto:email@address) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
-* **Project Link** - https://github.com/MikeMaynard14/termoneexample
+* **Your Name & Surname** - [email@address](mailto: Leander.vaonline@gmail.com) - [@instagram_handle](https://www.instagram.com/_.leander_e/) 
+* **Project Link** - https://github.com/LeandervanAarde/nhl
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
