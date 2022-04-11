@@ -163,7 +163,7 @@ Throughout the concept ideation I would also be learning more about react and th
 
 ### Custom UI
 
-![image8](https://drive.google.com/uc?export=view&id=1FkDDCFdbAgA_YZNAQofmj6QswcYzr0mt)
+![image8](https://drive.google.com/uc?export=view&id=1uGaJs6NrIscBs15BjXAB35AaHelw1JiX)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
