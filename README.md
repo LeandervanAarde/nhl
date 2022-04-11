@@ -228,7 +228,7 @@ See the [open issues](https://github.com/LeandervanAarde/nhl/issues) for a list 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [Leander van Aarde](https://github.com/LeandervanAarde/nhl)
+* [Leander van Aarde](https://github.com/LeandervanAarde/nhl)
 
 <!-- LICENSE -->
 ## License
@@ -238,7 +238,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Your Name & Surname** - [email@address](mailto: Leander.vaonline@gmail.com) - [@instagram_handle](https://www.instagram.com/_.leander_e/) 
+* **leander van Aarde** -(mailto: Leander.vaonline@gmail.com) - [@instagram_handle](https://www.instagram.com/_.leander_e/) 
 * **Project Link** - https://github.com/LeandervanAarde/nhl
 
 <!-- ACKNOWLEDGEMENTS -->

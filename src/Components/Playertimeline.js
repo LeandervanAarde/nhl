@@ -41,7 +41,7 @@ const Playertimeline = () => {
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
-            if (elmnt != x[i] && elmnt != document.getElementById("input3")) {
+            if (elmnt != x[i] && elmnt != document.getElementById("input1")) {
                 x[i].parentNode.removeChild(x[i]);
             }
         }
@@ -51,7 +51,7 @@ const Playertimeline = () => {
         let a, b, val = event.currentTarget.value;
         closeAllLists();
         a = document.createElement("DIV");
-        a.setAttribute("id", "input3" + "autocomplete-list");
+        a.setAttribute("id", "input1" + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         document.getElementById("input").appendChild(a);
         for (let i = 0; i < players.length; i++) {
