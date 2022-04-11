@@ -365,6 +365,20 @@ const Playercompare = () => {
 
     return (
         <Row className='player-compare-row'>
+
+<Col className="col-12 text-center">
+                <h2 className="context-h2 ms-3">COMPARE YOUR FAVORITE PLAYERS</h2>
+                <p> Pick your favorite players here to compare popular statistics! Get to know your player and which players deserve to be in the top all-time list.</p>
+                <br></br>
+                <p>Our top 4 players</p>
+                <ul>
+                    <li className="top-3">Alexander Ovechkin</li>
+                    <li className="top-3">Sidney Crosby</li>
+                    <li className="top-3">Connor McDavid </li>
+                    <li className="top-3">Wayne Gretzky </li>
+                </ul>
+            </Col>
+
             <Col className='col-12 col-lg-4 input-container' id='input'>
                 <InputGroup className="mb-3 mt-4 input" id='input1'>
                     <FormControl ref={inputVal}

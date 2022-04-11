@@ -1,12 +1,4 @@
-.form-control{
-  background-color: transparent !important;
-  color: white !important;
-  
-}
-.form-control ::placeholder{
 
-  color: white !important;
-}
 
 .toggle-holder{
   margin-top: 2% !important;
@@ -31,4 +23,16 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+.top-3{
+  color: white;
+}
+ul {
+    list-style-type: none;
+}
+
+.context-h2{
+  color: white;
+  text-decoration: none;
 }

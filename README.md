@@ -77,11 +77,12 @@ Welcome to CHEL! CHEL is a web based application that tracks the statistics of N
 able to view the top Teams in the league, a range of player statistics being compared and teams being compared. You are also able to track the performance of these players over the course of their careers in categories. Live scores are updated daily to give users the latest scores on the most exciting games from the past 24 hours. 
 
 ### Built With
-* [Css](no webiste/provided)
+* Css
 * [React](https://reactjs.org/)
 * [Chartsjs](https://www.chartjs.org/)
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 * [Axios](https://axios-http.com/docs/intro)
+* [<model-viewer>](https://modelviewer.dev/)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -145,11 +146,14 @@ See the latest and most up to date scores of 2 recent games
 <!-- here you will add things like wireframing, data structure planning, anything that shows your process. You need to include images-->
 ## Concept Process
 
-The `Conceptual Process` is the set of actions, activities and research that was done when starting this project.
+The `Conceptual Process` is the set of actions, activities and research that was done when starting this project. <br>
+In this project I had started the conceptual process through identifying the correct API, once I had identified the API that I could use and extract a sufficient amount of data from, I had gone on to find inspiration from other web applications/ websites. This would entail looking at how other websites approached data visualisation and finding an overall design and colour scheme.
+<br> 
+Throughout the concept ideation I would also be learning more about react and the implementation of react so that I could identify what I could use and what not. 
 
 ### Ideation
 
-![image5][image5]
+![image5](https://drive.google.com/uc?export=view&id=1FkDDCFdbAgA_YZNAQofmj6QswcYzr0mt)
 <br>
 ![image6][image6]
 
@@ -159,7 +163,7 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Custom UI
 
-![image8][image8]
+![image8](https://drive.google.com/uc?export=view&id=1FkDDCFdbAgA_YZNAQofmj6QswcYzr0mt)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process

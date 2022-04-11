@@ -1,34 +1,69 @@
-.team-compare-row{
+.team-compare-row {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 1%;
     background-color: #2b2b2b;
 }
 
-.chart-container-2{
+.chart-container-2 {
     padding: 2%;
 }
 
- .polar-radar{
+.polar-radar {
     height: auto;
     background-color: #272626;
-  padding: 2%;
+    padding: 2%;
     border-radius: 8px;
-    box-shadow: 0px 5px 14px 5px rgba(0,0,0,0.30);
-    -webkit-box-shadow: 0px 5px 14px 5px rgba(0,0,0,0.30);
-    -moz-box-shadow: 0px 5px 14px 5px rgba(0,0,0,0.30);
-
-
+    box-shadow: 0px 5px 14px 5px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0px 5px 14px 5px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 5px 14px 5px rgba(0, 0, 0, 0.30);
 }
 
-.player-icon{
-    background-color: black;
-    height: 25%;
-    width: 25%;
+.player-icon {
+    background-color: white;
+    height: 30%;
+    width: 30%;
     border-radius: 55%;
-    
+    background-position: center;
 }
 
-.player{
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #2b2b2b;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    margin-top: -72px;
+    left: 0;
+    right: 0;
+    max-height: 195px;
+    overflow-y: scroll;
+    border-radius: 8px;
+}
+
+.inner{
+    background-color: rgb(223, 220, 220);
+    border-radius: 12px;
+    height: 600px;
+}
+
+.inner p{
     color: black;
+    margin-top: 35px !important;
+    margin-left: 20px;
+}
+
+.official-stat{
+    margin-left: 70%;
+}
+.banner{
+    background-color: rgb(31, 31, 31);
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.team{
+    color: #272626 !important;
 }

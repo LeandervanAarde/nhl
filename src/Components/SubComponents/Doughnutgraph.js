@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Overview.css';
 import 'chart.js/auto';
 import { Doughnut} from 'react-chartjs-2';
 

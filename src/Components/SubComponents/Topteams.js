@@ -1,6 +1,5 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
-import '../Overview.css';
 import 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import { Radar } from 'react-chartjs-2';

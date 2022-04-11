@@ -4,7 +4,6 @@ const scoreItem = (props) => {
     return (
         <>
             <div className='circle ' 
-            
             style={{  
                 backgroundImage: "url(" + props.logoOne + ")",
                 backgroundPosition: 'center',
@@ -26,7 +25,6 @@ const scoreItem = (props) => {
                     backgroundRepeat: 'no-repeat'
                   }}
              >
-          
             </div>    
         </>
     );

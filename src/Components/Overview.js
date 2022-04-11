@@ -5,9 +5,9 @@ import '../Overview.css';
 import axios from 'axios';
 import 'chart.js/auto';
 import { useState, useEffect} from "react";
-import Topteams from './Topteams';
-import Bargraph from './Bargraph';
-import Doughnutgraph from './Doughnutgraph';
+import Topteams from './SubComponents/Topteams';
+import Bargraph from './SubComponents/Bargraph';
+import Doughnutgraph from './SubComponents/Doughnutgraph';
 
 
 const Overview = () => {
@@ -74,12 +74,16 @@ const Overview = () => {
                 {barInfo}
                 
             </Col>
- 
-            <Col className='col-12 col-lg-5 mt-4 mb-5 graph '>
+            <Col className="col-12 text-center mb-2 mt-2">
+                <h2 className="context-h2 ms-3">Top 2 Teams in the NHL</h2>
+            </Col>
+            <Col className='col-6 col-lg-5 mt-4 mb-5 graph '>
             {topTwoTeams[0]}
             </Col>
         
-            <Col className='col-12 col-lg-5  mt-4 mb-5 offset-lg-2 graph'>
+            
+
+            <Col className='col-6 col-lg-5 mt-4 mb-5 offset-lg-2 graph'>
             {topTwoTeams[1]}
             </Col>
 

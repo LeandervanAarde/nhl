@@ -5,7 +5,7 @@
     background-color: #2b2b2b;
 }
 
-#input, #input-2 {
+#input, #input-2, #input-3 {
     position: relative;
     display: inline-block;
   
@@ -14,7 +14,6 @@
 .autocomplete-items {
     position: absolute;
     border: 1px solid #2b2b2b;
- 
     border-top: none;
     z-index: 99;
     top: 100%;
@@ -161,6 +160,10 @@ padding-top: 10px;
 .button:hover {
     box-shadow: inset 400px 50px 0 0 rgb(30, 30, 148);
     transform: scale(1.1);
+  }
+
+  .official-stat{
+      margin-left: 0;
   }
 
 

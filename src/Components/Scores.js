@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../Scores.css';
 import axios from 'axios';
-import Scoreitem from './Scoreitem';
+import Scoreitem from './SubComponents/Scoreitem';
 import logos from "../Logos";
 
 const Scores = () => {
@@ -26,15 +26,14 @@ const Scores = () => {
             let teamLogo;
             let teamAwayLogo;
             for(let i = 0; i < data.length; i++){
-          
                 for(let j = 0; j < logos["NHL_Logos"].length; j++){
-                    console.log("Hello");
+                    // console.log("Hello");
                     if(logos["NHL_Logos"][j]["name"].includes(data[i].teams.home.team.name)){
                         teamLogo = logos["NHL_Logos"][j]["url"];
                        
                         break;
                     }
-                    console.log("home logo found");
+                    // console.log("home logo found");
                 }
                 for(let j = 0; j <logos["NHL_Logos"].length; j++){
                     if( logos["NHL_Logos"][j]["name"].includes(data[i].teams.away.team.name)){
@@ -43,19 +42,8 @@ const Scores = () => {
                         break;
 
                     }
-                    console.log("Away logo found");
+                    // console.log("Away logo found");
                 }
-                // let teamLogo= logos["NHL_Logos"].filter(element =>{
-                //    return element["name"] == data[i].teams.home.team.name;  
-
-                // });
-
-                // let teamAwayLogo= logos["NHL_Logos"].filter(element =>{
-                //     return element["name"] == data[i].teams.away.team.name;  
- 
-                //  });
-              
-
                game1Arr.push({
                    //push home and away teams to the game1 array in order to get both scores
                     id: data[i].teams.home.team.id,
@@ -78,17 +66,19 @@ const Scores = () => {
              setSecondScore(scoreTwo);
         })    
     }, [])
-    console.log(gameOne);
- 
+    // console.log(gameOne);
+    console.log(firstScore);
+    console.log(secondScore);
     return (
         <Row className='footer-row'>
+            <Col className="col-12 text-center context-h2"> <h3>Recent Scores</h3></Col>
             <Col className='col-6 scores'>
             {/* Call the final score after the score Item has been added */}
-              {firstScore [1]}
+              {firstScore [0]}
             </Col>
 
             <Col className='col-6 scores'>
-                {secondScore [2]}
+                {secondScore [1]}
             </Col>
         </Row>
     );

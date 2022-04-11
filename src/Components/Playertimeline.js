@@ -9,7 +9,8 @@ import 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
 import players from '../Players.js';
 import { useState, useEffect, useRef } from "react";
-import Dropdownitem from './Dropdownitem';
+import Dropdownitem from "./SubComponents/Dropdownitem";
+
 
 const Playertimeline = () => {
     const inputVal = useRef();
@@ -20,7 +21,6 @@ const Playertimeline = () => {
     const [playerStatistics, setPlayerStatistics] = useState([]);
     const dropVal = useRef();
     const dropYear = useRef();
-    const [dropDownValue, setDropDownValue] = useState();
     const [stats, setStats] = useState([]);
     const [lineData, setLineData] = useState(
         {
@@ -41,7 +41,7 @@ const Playertimeline = () => {
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
-            if (elmnt != x[i] && elmnt != document.getElementById("input1")) {
+            if (elmnt != x[i] && elmnt != document.getElementById("input3")) {
                 x[i].parentNode.removeChild(x[i]);
             }
         }
@@ -51,7 +51,7 @@ const Playertimeline = () => {
         let a, b, val = event.currentTarget.value;
         closeAllLists();
         a = document.createElement("DIV");
-        a.setAttribute("id", "input1" + "autocomplete-list");
+        a.setAttribute("id", "input3" + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         document.getElementById("input").appendChild(a);
         for (let i = 0; i < players.length; i++) {
@@ -182,7 +182,20 @@ const Playertimeline = () => {
 
     return (
         <Row className='timeline-row'>
-            <Col className='col-12 col-lg-4 input-container ms-5' id='input'>
+
+            <Col className="col-12 text-center">
+                <h2 className="context-h2 ms-3">VIEW PLAYER PERFORMANCE</h2>
+                <p> Pick a player in the NHL, their stat and the year you would like the stats to start at and see how players have been performing over 5 years from the start date, see when players peak/drop or gained to most of their stats </p>
+                <br></br>
+                <p>Our top 3 players</p>
+                <ul>
+                    <li className="top-3">Alexander Ovechkin</li>
+                    <li className="top-3">Patrick Kane</li>
+                    <li className="top-3">Joe Thorton</li>
+                </ul>
+            </Col>
+
+            <Col className='col-11 col-lg-4 input-container ms-5' id='input'>
 
                 <InputGroup className="mb-3 mt-4 input" id='input1'>
                     <FormControl ref={inputVal}
@@ -201,7 +214,7 @@ const Playertimeline = () => {
                     displayData();
                 }}
                 ref={dropVal}>
-                    <option disabled={true} defaultValue={true}  > Select Player stat</option>
+                    <option disabled={true} defaultValue={true} selected={true} > Select Player stat</option>
                     <option value="Goals" >Goals</option>
                     <option value="Assists" >Assists</option>
                     <option value="Shots" >Shots</option>
@@ -212,7 +225,7 @@ const Playertimeline = () => {
 
             <Col className='col-12 col-lg-4 mt-3 offset input-container'>
                 <select className='col-12 dropdown' ref={dropYear} onChange={displayData}>
-                    <option disabled={true} > Select start Season</option>
+                    <option disabled={true} selected={true} > Select start Season</option>
                     {playerStatistics && playerStatistics.map((item) =>
                         <Dropdownitem name={item.season} />
                     )}
