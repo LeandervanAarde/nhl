@@ -164,7 +164,7 @@ Throughout the concept ideation I would also be learning more about react and th
 ![image9](https://drive.google.com/uc?export=view&id=1MxgcNI2FIrKrRUuhaOxtd6aNQJ0XdUfs)
 ### Custom UI
   In order to make a users experience more pleasureable, I have added a 3D model of a puck through the implementation of the model-viewer cdn. This makes a users experience more pleasureable considering that it's something interesting that's not generally seen withina web application. 
-![image10](https://drive.google.com/uc?export=view&id=1lIcZ_CbVNAnp-7NbmVQTLBJHZa1AtlTH)
+![Gif10](https://drive.google.com/uc?export=view&id=1lIcZ_CbVNAnp-7NbmVQTLBJHZa1AtlTH)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
