@@ -123,7 +123,8 @@ Run the following in the command-line to install all the required dependencies:
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-![image2](https://drive.google.com/uc?export=view&id=1bHE72vLjpqrjRsHUDHiq-NO7HIz7YvfU)
+
+![image2](https://drive.google.com/uc?export=view&id=1bHE72vLjpqrjRsHUDHiq-NO7HIz7YvfU/)
 
 ### Get up to date statistics of NHL players!
 
@@ -217,9 +218,9 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 ### Mockups
 
-![image9][image9]
+![image10](https://drive.google.com/uc?export=view&id=1vvydaUeNF1iBTg7fu_dtg_8F9Dfqt_f0)
 <br>
-![image10][image10]
+![image11](https://drive.google.com/uc?export=view&id=1qh0qEys9OI52bvsWoBAwsGXLYwRVOkcA)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
