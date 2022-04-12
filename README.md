@@ -42,29 +42,29 @@
 
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-* [Project Description](#project-description)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-* [Prerequisites](#prerequisites)
-* [How to install](#how-to-install)
-* [Features and Functionality](#features-and-functionality)
-* [Concept Process](#concept-process)
-* [Ideation](#ideation)
-* [Wireframes](#wireframes)
-* [Custom UI](#user-flow)
-* [Development Process](#development-process)
-* [Implementation Process](#implementation-process)
-* [Highlights](#highlights)
-* [Challenges](#challenges)
-* [Future Implementation](#peer-reviews)
-* [Final Outcome](#final-outcome)
-* [Mockups](#mockups)
-* [Video Demonstration](#video-demonstration)
-* [Conclusion](#conclusion)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* :point_right: [About the Project](#about-the-project)
+* :point_right: [Project Description](#project-description)
+* :point_right: [Built With](#built-with)
+* :point_right: [Getting Started](#getting-started)
+* :point_right: [Prerequisites](#prerequisites)
+* :point_right: [How to install](#how-to-install)
+* :point_right: [Features and Functionality](#features-and-functionality)
+* :point_right: [Concept Process](#concept-process)
+* :point_right: [Ideation](#ideation)
+* :point_right: [Wireframes](#wireframes)
+* :point_right: [Custom UI](#user-flow)
+* :point_right: [Development Process](#development-process)
+* :point_right: [Implementation Process](#implementation-process)
+* :point_right: [Highlights](#highlights)
+* :point_right: [Challenges](#challenges)
+* :point_right: [Future Implementation](#peer-reviews)
+* :point_right: [Final Outcome](#final-outcome)
+* :point_right: [Mockups](#mockups)
+* :point_right: [Video Demonstration](#video-demonstration)
+* :point_right: [Conclusion](#conclusion)
+* :point_right: [License](#license)
+* :point_right: [Contact](#contact)
+* :point_right: [Acknowledgements](#acknowledgements)
 
 <!--PROJECT DESCRIPTION-->
 ## About the Project
@@ -82,7 +82,7 @@ able to view the top Teams in the league, a range of player statistics being com
 * [Chartsjs](https://www.chartjs.org/)
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 * [Axios](https://axios-http.com/docs/intro)
-* [<model-viewer>](https://modelviewer.dev/)
+* [model-viewer](https://modelviewer.dev/)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -137,6 +137,9 @@ The implementation of chartjs allows users to compare data of player and teams i
 ![image4][image4]
 ### Up to date scores
 See the latest and most up to date scores of 2 recent games
+
+### Compare Teams
+Compare teams in NHL to see how they match up, see 
 
 ![image5][image5]
 

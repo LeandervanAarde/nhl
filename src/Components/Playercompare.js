@@ -115,11 +115,11 @@ const Playercompare = () => {
 
                 setPlayerOnenr(idOne);
                 setApiLink('https://statsapi.web.nhl.com/api/v1/people/' + idOne + '/stats?stats=yearByYear', 0); 
-
+                
             }
 
         }
-       
+
     }
        function closeAllLists2(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
@@ -194,9 +194,7 @@ const Playercompare = () => {
                     penaltyMin: penSum,
                     hits: hitSum,
                 }, index);
-
             })
-
     }, [apiLink])
 
     const updatePlayerTwo = (event) => {
