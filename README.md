@@ -157,7 +157,7 @@ Throughout the concept ideation I would also be learning more about react and th
 
 ### Ideation
 
-![image5](https://drive.google.com/uc?export=view&id=1FkDDCFdbAgA_YZNAQofmj6QswcYzr0mt)
+![image5](https://drive.google.com/uc?export=view&id=1CnAZx4L5mjxIh8QP-bYqLTUxsdFEBHvb)
 <br>
 ![image6][image6]
 
@@ -219,7 +219,6 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 ### Mockups
 
 ![image10](https://drive.google.com/uc?export=view&id=1CnAZx4L5mjxIh8QP-bYqLTUxsdFEBHvb)
-<br>
 ![image11](https://drive.google.com/uc?export=view&id=1cFheqJ1b2ZAUQw9vK_ZO1w9i8aJ1Nhr1)
 
 <!-- VIDEO DEMONSTRATION -->
