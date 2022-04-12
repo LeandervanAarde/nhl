@@ -218,9 +218,9 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 ### Mockups
 
-![image10](https://drive.google.com/uc?export=view&id=1vvydaUeNF1iBTg7fu_dtg_8F9Dfqt_f0)
+![image10](https://drive.google.com/uc?export=view&id=1CnAZx4L5mjxIh8QP-bYqLTUxsdFEBHvb)
 <br>
-![image11](https://drive.google.com/uc?export=view&id=1qh0qEys9OI52bvsWoBAwsGXLYwRVOkcA)
+![image11](https://drive.google.com/uc?export=view&id=1cFheqJ1b2ZAUQw9vK_ZO1w9i8aJ1Nhr1)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
