@@ -123,7 +123,7 @@ Run the following in the command-line to install all the required dependencies:
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
+![image2](https://drive.google.com/uc?export=view&id=1bHE72vLjpqrjRsHUDHiq-NO7HIz7YvfU)
 
 ### Get up to date statistics of NHL players!
 
@@ -139,7 +139,7 @@ The implementation of chartjs allows users to compare data of player and teams i
 See the latest and most up to date scores of 2 recent games
 
 ### Compare Teams
-Compare teams in NHL to see how they match up, see 
+Compare teams in NHL to see how they match up. 
 
 ![image5][image5]
 
@@ -192,8 +192,11 @@ The `Development Process` is the technical implementations and functionality don
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
+* One of the main challenges faced was the implementation of the players compare page, the API endpoint that I had used does not list players, but does return a single player by ID. As we do not know these unique ID's it had presented a challenge of getting the desired players. I had resolved this by downloading a typeScript folder with  these players ID's and Names, converting it to a JS file and using that to get the ID and run the API call. 
+* On the Team Compare page I have utilized a polar area chart, which had proven to be quite challenging at first, the problem was that I could append 2 polar area charts through props (as opposed to the single polar area that would hold both teams). This was resolved through an empty array that would hold the length of the data and then append it after an API call was run
+* The desired outcome on the player timeline page was to show a single Statistic from a player over the course of 5 years. The challenge faced here was that if a year was chosen that could not increment by 5, the entire function would break, thus no data would be displayed (eg. Alex Ovechkin, Shots, 2017/2018. This would break as it can only show 4 seasons.). I had overcome this by creating a function that would return the last year that can increment by 5 if the value is not able to increment.
+
+
 
 
 #### Above And Beyond
@@ -247,9 +250,10 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
+* [model-viewer](https://modelviewer.dev/)
+* [Stack overflow](https://stackoverflow.com/)
+* [React Chartsjs](https://www.npmjs.com/package/react-chartjs-2)
+* [Blender](https://www.blender.org/)
+* [Image](https://unsplash.com/s/photos/hockey)
+* [mockups](https://www.figma.com/community/plugin/786250770157843670/Mockuuups-Studio)
 
