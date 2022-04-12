@@ -130,20 +130,17 @@ Run the following in the command-line to install all the required dependencies:
 
 Through the use of the NHL-API we were able to get the most relevant and up-to-date data of the NHL!
 
-![image3][image3]
+![image3](https://drive.google.com/uc?export=view&id=1Nz-gNFao67djLJhsJPGvyKVITcsbJnV3)
 ### Compare players through chartsjs! 
 
 The implementation of chartjs allows users to compare data of player and teams in order to get a visual idea of where players stand in the NHL
 
-![image4][image4]
+![image4][https://drive.google.com/uc?export=view&id=1qP9RByCodad-wBXpLnyZnBKhMoC0t5pc]
 ### Up to date scores
 See the latest and most up to date scores of 2 recent games
 
 ### Compare Teams
 Compare teams in NHL to see how they match up. 
-
-![image5][image5]
-
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -158,9 +155,6 @@ Throughout the concept ideation I would also be learning more about react and th
 ### Ideation
 
 ![image5](https://drive.google.com/uc?export=view&id=1CnAZx4L5mjxIh8QP-bYqLTUxsdFEBHvb)
-<br>
-![image6][image6]
-
 ### Wireframes
  In order to get the best result and most user-centered design that I could produce, I had to create wireframes. Giving me the opportunity to identify any problems with the design earlier on and thus saving time during the development process.
 ![image7](https://drive.google.com/uc?export=view&id=1KtPLYfFAE1i60t74tVP3uhXAGANK4bkM)
@@ -220,6 +214,9 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 ![image10](https://drive.google.com/uc?export=view&id=1CnAZx4L5mjxIh8QP-bYqLTUxsdFEBHvb)
 ![image11](https://drive.google.com/uc?export=view&id=1cFheqJ1b2ZAUQw9vK_ZO1w9i8aJ1Nhr1)
+![image12](https://drive.google.com/uc?export=view&id=1GVeowYa9OiS-E_EtFMDd4gyhXPGy_Vzd)
+![image13](https://drive.google.com/uc?export=view&id=1OeF2P1xmajnRdLrd_NW8E9CqrsQgRqHG)
+![image14](https://drive.google.com/uc?export=view&id=1bHE72vLjpqrjRsHUDHiq-NO7HIz7YvfU)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration

@@ -52,7 +52,7 @@ const Playertimeline = () => {
         closeAllLists();
         a = document.createElement("DIV");
         a.setAttribute("id", "input1" + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
+        a.setAttribute("class", "autocomplete-items auto-2");
         document.getElementById("input").appendChild(a);
         for (let i = 0; i < players.length; i++) {
             if (players[i].name.toUpperCase().includes(val.toUpperCase())) {

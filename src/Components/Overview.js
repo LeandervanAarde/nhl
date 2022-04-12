@@ -64,13 +64,17 @@ const Overview = () => {
                 <p className='text-center'>Here you can get an introduction to <strong>CHEL</strong> a list of the top 10 teams provided with some contextualized information on the top 2 performing teams in the league as it currently stands!</p>
             </Col>
 
-            <Col className='col-12 col-md-5 teams mt-5 mb-5'>
-                <h1>Top 10 teams in the NHL</h1>
-                {teamData}
-                
-            </Col>
+           
+           <Col className='col-12 team-container'>
 
-            <Col className='col-12 col-md-6 offset-md-1 mt-5 mb-5 graph'>
+           <h1 className='text-center mt-3'>Top 10 teams in the NHL</h1>
+                {teamData}
+           </Col>
+              
+                
+            
+
+            <Col className='col-12 mt-5 mb-5 graph'>
                 {barInfo}
                 
             </Col>

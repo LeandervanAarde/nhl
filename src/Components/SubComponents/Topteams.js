@@ -10,11 +10,10 @@ import { useState, useEffect, useRef } from "react";
 const Topteams = (props) => {
 
     return (
-        <Col className='col-12 info'>
-                
+        <Col className='col-12 col-md-6  teams mt-2 mb-2'>
             <div className='team info'>
                 <h3 className='team-name'> Team : <b>{props.name}</b> </h3> 
-                <p key={props.id}> League Rank: {props.rank}</p> 
+                <h3 key={props.id}> League Rank: {props.rank}</h3> 
                 <p> Team Wins: {props.wins} </p> 
                 <p> Team Losses: {props.losses} </p> 
              </div>

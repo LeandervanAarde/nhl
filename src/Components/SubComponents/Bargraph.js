@@ -19,7 +19,7 @@ const Bargraph = (props) => {
             }],      
             borderwidth: 1
 
-        }} height={260} options ={{
+        }} height={160} options ={{
             responsive: false,
             maintainAspectRatio: true,
             plugins: {
@@ -29,7 +29,7 @@ const Bargraph = (props) => {
                 title: {
                     display: true,
                     text: "Top 10 Teams Wins",
-                    position: "bottom",
+                    position: "top",
                     color: "white",
                     font: {
                         size: 24,
