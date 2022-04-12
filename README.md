@@ -129,8 +129,6 @@ Run the following in the command-line to install all the required dependencies:
 ### Get up to date statistics of NHL players!
 
 Through the use of the NHL-API we were able to get the most relevant and up-to-date data of the NHL!
-
-![image3](https://drive.google.com/uc?export=view&id=1Nz-gNFao67djLJhsJPGvyKVITcsbJnV3)
 ### Compare players through chartsjs! 
 
 The implementation of chartjs allows users to compare data of player and teams in order to get a visual idea of where players stand in the NHL
@@ -162,7 +160,6 @@ Throughout the concept ideation I would also be learning more about react and th
 ![image9](https://drive.google.com/uc?export=view&id=1MxgcNI2FIrKrRUuhaOxtd6aNQJ0XdUfs)
 ### Custom UI
   In order to make a users experience more pleasureable, I have added a 3D model of a puck through the implementation of the model-viewer cdn. This makes a users experience more pleasureable considering that it's something interesting that's not generally seen withina web application. 
-![Gif10](https://drive.google.com/uc?export=view&id=1lIcZ_CbVNAnp-7NbmVQTLBJHZa1AtlTH)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
