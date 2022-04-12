@@ -69,7 +69,7 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 <!-- header image of project -->
-![image1][image1]
+![image1](https://drive.google.com/uc?export=view&id=1LDzI0HbSKYW6aXMPRkqqfK-CIuXQP_L6)
 
 ### Project Description
 
@@ -124,7 +124,7 @@ Run the following in the command-line to install all the required dependencies:
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 
-![image2](https://drive.google.com/uc?export=view&id=1bHE72vLjpqrjRsHUDHiq-NO7HIz7YvfU/)
+![image2](https://drive.google.com/uc?export=view&id=1bHE72vLjpqrjRsHUDHiq-NO7HIz7YvfU)
 
 ### Get up to date statistics of NHL players!
 
